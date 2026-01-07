@@ -34,6 +34,10 @@ body {
   grid-template-columns: 280px 1fr; /* slightly wider sidebar */
   gap: 24px;
 }
+.nav-links a.nav-btn,
+.nav-links a.nav-btn:hover {
+  text-decoration: none;
+}
 
 /* Sidebar */
 .sidebar {
@@ -309,6 +313,10 @@ strong {
     position: relative;
     top: 0;
   }
+  .nav-links a.nav-btn,
+.nav-links a.nav-btn:hover {
+  text-decoration: none;
+}
 
   .sidebar {
   text-align: center;
