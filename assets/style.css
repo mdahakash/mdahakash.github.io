@@ -38,6 +38,11 @@ body {
 .nav-links a.nav-btn:hover {
   text-decoration: none;
 }
+.nav-links a.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 
 /* Sidebar */
 .sidebar {
@@ -316,6 +321,11 @@ strong {
   .nav-links a.nav-btn,
 .nav-links a.nav-btn:hover {
   text-decoration: none;
+}
+.nav-links a.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
   .sidebar {
