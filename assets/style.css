@@ -38,11 +38,6 @@ body {
 .nav-links a.nav-btn:hover {
   text-decoration: none;
 }
-.nav-links a.nav-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
 
 /* Sidebar */
 .sidebar {
@@ -309,6 +304,10 @@ strong {
 
 
 
+
+
+
+
 /* Mobile */
 @media (max-width: 900px) {
   .container {
@@ -322,12 +321,6 @@ strong {
 .nav-links a.nav-btn:hover {
   text-decoration: none;
 }
-.nav-links a.nav-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
   .sidebar {
   text-align: center;
   padding: 30px 20px;
