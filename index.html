@@ -1,488 +1,928 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta charset="UTF-8">
   <title>Md Ashraful Hossen Akash</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/style.css">
-</head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2962a4;
+      --primary-light: #4a7fcb;
+      --accent: #c0392b;
+      --text: #222;
+      --text-muted: #666;
+      --bg: #fff;
+      --bg-alt: #f5f5f5;
+      --border: #e0e0e0;
+      --nav-height: 56px;
+      --sidebar-width: 270px;
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Merriweather Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAVBAR ── */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: color 0.15s;
+      font-weight: 500;
+    }
+
+    .nav-btn:hover, .nav-btn.active {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-btn.active { font-weight: 700; color: var(--primary); }
+
+    .nav-icon-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 15px;
+      padding: 6px 8px;
+      border-radius: 4px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    /* ── PAGE LAYOUT ── */
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    /* ── HOME: two-column hero ── */
+    .hero {
+      display: grid;
+      grid-template-columns: var(--sidebar-width) 1fr;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+    }
+
+    .hero-left {
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 16px;
+      border: 3px solid var(--border);
+    }
+
+    .profile-pic-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dce8f5, #b8d0ed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 56px;
+      color: var(--primary);
+    }
+
+    .hero-name {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .hero-role {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .hero-institute a {
+      font-size: 14px;
+      color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      font-size: 22px;
+      color: var(--primary);
+      transition: color 0.15s, transform 0.15s;
+    }
+
+    .social-links a:hover { color: var(--primary-light); transform: translateY(-2px); text-decoration: none; }
+
+    .hero-right {}
+
+    .hero-right p {
+      text-align: justify;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    /* ── Two-column grid for Interests + Education ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 24px;
+    }
+
+    .two-col h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .two-col ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .two-col ul li {
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .edu-entry {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+
+    .edu-entry i {
+      color: var(--text-muted);
+      margin-top: 3px;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .edu-entry-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .edu-entry-text span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ── SECTION BANDS ── */
+    .section { display: none; }
+    .section.active { display: block; }
+
+    .band {
+      padding: 48px 0;
+    }
+
+    .band-alt {
+      background: var(--bg-alt);
+      margin-left: -24px;
+      margin-right: -24px;
+      padding: 48px 24px;
+    }
+
+    /* ── Section layout: left title + right content ── */
+    .section-layout {
+      display: grid;
+      grid-template-columns: var(--sidebar-width) 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .section-label h2 {
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .section-label .see-all {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-item {
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pub-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .pub-meta {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pub-meta i { font-size: 12px; }
+
+    .pub-title-link {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      line-height: 1.4;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .pub-venue {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .pub-venue.accepted { color: var(--text-muted); }
+
+    .pub-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 12px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 2px 9px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: background 0.15s;
+      text-decoration: none;
+    }
+
+    .badge:hover { background: var(--bg-alt); text-decoration: none; }
+
+    /* ── PROJECTS ── */
+    .project-item {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-item:last-child { border-bottom: none; }
+
+    .project-item h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .project-item p { font-size: 14px; color: var(--text); margin-bottom: 6px; }
+
+    .tech-tag {
+      display: inline-block;
+      font-size: 12px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 2px 8px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      color: var(--text-muted);
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .exp-body h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .exp-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
+
+    /* ── AWARDS ── */
+    .award-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .award-item:last-child { border-bottom: none; }
+
+    .award-icon {
+      font-size: 18px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .award-body h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .award-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
+
+    /* ── CONTACT ── */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .contact-item i {
+      font-size: 20px;
+      color: var(--text);
+      width: 24px;
+      text-align: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 760px) {
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0; right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 8px 0;
+        z-index: 99;
+      }
+
+      .nav-links.show { display: flex; }
+
+      .hero, .section-layout, .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left { margin-bottom: 16px; }
+
+      .band-alt {
+        margin-left: -24px;
+        margin-right: -24px;
+      }
+    }
+  </style>
+</head>
 <body>
+
 <!-- TOP NAVIGATION -->
 <header class="top-nav">
-  <div class="nav-name">Ashraful</div>
+  <div class="nav-brand">Ashraful Akash</div>
 
-  <!-- Hamburger (mobile only) -->
   <button class="menu-toggle" onclick="toggleMenu()">
     <i class="fa-solid fa-bars"></i>
   </button>
 
-  <!-- Navigation -->
   <nav class="nav-links" id="mobileMenu">
-  <button class="nav-btn" data-target="home" onclick="showSection('home')">Home</button>
-
-  <button class="nav-btn" data-target="publications" onclick="showSection('publications')">Publications</button>
-  
-  <button class="nav-btn" data-target="projects" onclick="showSection('projects')">Projects</button>
-  
-  <button class="nav-btn" data-target="experience" onclick="showSection('experience')">Experience</button>
-
-  <button class="nav-btn" data-target="awards" onclick="showSection('awards')">Awards & Certificates</button>
-
-  <!-- CV BUTTON -->
-  <a href="assets/myCV.pdf" class="nav-btn" target="_blank">CV</a>
-</nav>
-
+    <button class="nav-btn active" data-target="home" onclick="showSection('home')">Home</button>
+    <button class="nav-btn" data-target="publications" onclick="showSection('publications')">Publications</button>
+    <button class="nav-btn" data-target="projects" onclick="showSection('projects')">Projects</button>
+    <button class="nav-btn" data-target="experience" onclick="showSection('experience')">Experience</button>
+    <button class="nav-btn" data-target="awards" onclick="showSection('awards')">Awards</button>
+    <a href="assets/myCV.pdf" class="nav-btn" target="_blank">CV</a>
+  </nav>
 </header>
 
-<div class="container">
+<!-- PAGE CONTENT -->
+<div class="page-wrap">
 
-<!-- LEFT STATIC SIDEBAR -->
-<aside class="sidebar">
+  <!-- ══ HOME ══ -->
+  <div id="home" class="section active">
+    <div class="hero">
 
-  <img src="assets/profile.jpg" alt="Md Ashraful Hossen Akash" class="profile-pic">
+      <!-- Left: profile card -->
+      <div class="hero-left">
+        <div class="profile-pic-placeholder">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <!-- If you have assets/profile.jpg, replace above with:
+        <img src="assets/profile.jpg" alt="Ashraful" class="profile-pic"> -->
 
-  <h3 class="name">Md Ashraful Hossen Akash</h3>
-  <p class="role">CSE Undergraduate · CV & NLP Researcher</p>
+        <div class="hero-name">Md Ashraful Hossen Akash</div>
+        <div class="hero-role">CSE Undergraduate · CV &amp; NLP Researcher</div>
+        <div class="hero-institute">
+          <a href="https://www.ruet.ac.bd" target="_blank">Rajshahi University of Engineering &amp; Technology</a>
+        </div>
 
-  <ul class="sidebar-links">
-    <li>
-      <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:ashraful.hossen.akash@email.com">Email</a>
-    </li>
+        <div class="social-links">
+          <a href="mailto:ashraful.hossen.akash@email.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://scholar.google.com/citations?user=dnLo7VQAAAAJ" target="_blank" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+          <a href="https://github.com/mdahakash" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mdahakash" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.kaggle.com/ashrafulhossenakash" target="_blank" title="Kaggle"><i class="fa-brands fa-kaggle"></i></a>
+          <a href="https://www.researchgate.net/profile/Md-Ashraful-Hossen-Akash" target="_blank" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
+          <a href="assets/myCV.pdf" target="_blank" title="CV" style="font-size:15px;font-weight:700;color:var(--primary);margin-top:4px;">CV</a>
+        </div>
+      </div>
 
-     <li>
-      <i class="fa-brands fa-kaggle"></i>
-      <a href="https://www.kaggle.com/ashrafulhossenakash" target="_blank">Kaggle</a>
-    </li>
-    
-    <li>
-      <i class="fa-brands fa-github"></i>
-      <a href="https://github.com/mdahakash" target="_blank">GitHub</a>
-    </li>
+      <!-- Right: bio -->
+      <div class="hero-right">
+        <p>
+          I am a CSE undergraduate at <strong>RUET (Rajshahi University of Engineering &amp; Technology)</strong>, Bangladesh,
+          with research interests in Artificial Intelligence, Computer Vision, and Natural Language Processing.
+          I have authored IEEE conference papers focusing on transformer-based NLP, satellite image segmentation,
+          and efficient deep learning models for medical imaging. My goal is to pursue advanced research
+          and build impactful AI-driven solutions.
+        </p>
+        <p>
+          I am currently working on a federated semi-supervised learning framework for retinal OCT image
+          classification, combining privacy-preserving distributed learning with state-of-the-art
+          attention-based architectures. Beyond research, I enjoy competitive programming and mentoring
+          junior students in their academic journeys.
+        </p>
 
-    <li>
-      <i class="fa-brands fa-linkedin"></i>
-      <a href="https://www.linkedin.com/in/mdahakash" target="_blank">LinkedIn</a>
-    </li>
+        <div class="two-col">
+          <!-- Interests -->
+          <div>
+            <h3>Interests</h3>
+            <ul>
+              <li>Computer Vision &amp; Medical Imaging</li>
+              <li>Natural Language Processing</li>
+              <li>Federated &amp; Semi-Supervised Learning</li>
+              <li>Satellite Image Analysis</li>
+              <li>Deep Learning Architectures</li>
+            </ul>
+          </div>
 
-    <li>
-      <i class="fa-brands fa-researchgate"></i>
-      <a href="https://www.researchgate.net/profile/Md-Ashraful-Hossen-Akash" target="_blank">ResearchGate</a>
-    </li>
-
-    <li>
-      <i class="fa-solid fa-graduation-cap"></i>
-      <a href="https://scholar.google.com/citations?user=dnLo7VQAAAAJ" target="_blank">Google Scholar</a>
-    </li>
-    
-  </ul>
-
-</aside>
-
-  <!-- RIGHT DYNAMIC CONTENT -->
-  <main class="content">
-
-    <!-- HOME -->
-    <div id="home" class="section active">
-      <h2>About Me</h2>
-      <p>
-        I am a CSE undergraduate at RUET with research interests in Artificial Intelligence and Natural Language Processing. I have authored IEEE conference papers focusing on transformer-based NLP and efficient deep learning models, alongside hands-on experience in software development. My goal is to pursue advanced research and build impactful AI-driven solutions.
-      </p>
-
-      <section class="education">
-  <h2>Education</h2>
-
-  <div class="edu-item">
-    <h3>BSc in Computer Science & Engineering</h3>
-    <p class="edu-institute">
-      Rajshahi University of Engineering & Technology (RUET), Bangladesh
-    </p>
-
-    <!---<p class="edu-gpa">
-      <strong>CGPA:</strong> 3.10 (Last 40 credits: 3.61)
-    </p>--->
-
-    <p>
-      <strong>Relevant Coursework:</strong>
-      Data Structures & Algorithms, Operating Systems, Database Systems,
-      Computer Networks, Machine Learning, Artificial Intelligence,
-      Software Engineering
-    </p>
-
-    <ul class="edu-points">
-      <li>Academic focus on Artificial Intelligence, Natural Language Processing, and Machine Learning</li>
-      <li>Actively involved in research, IEEE conference publications, and technical activities alongside coursework</li>
-    </ul>
-  </div>
-</section>
-
+          <!-- Education -->
+          <div>
+            <h3>Education</h3>
+            <div class="edu-entry">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div class="edu-entry-text">
+                <strong>BSc in Computer Science &amp; Engineering</strong>
+                <span>Rajshahi University of Engineering &amp; Technology (RUET)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-<div id="publications" class="section">
-  <h2>Publications</h2>
-    <!-- Publication 1 -->
-<div class="pub-item">
-  <h3 class="pub-title">
-    Memory-Efficient Deep Learning Architectures for Water Body Segmentation in Satellite Imagery:
-    A Comparative Analysis and Ensemble Approach
-  </h3>
+    <!-- Recent Publications band -->
+    <div class="band-alt">
+      <div class="section-layout">
+        <div class="section-label">
+          <h2>Recent Publications</h2>
+          <button class="see-all" onclick="showSection('publications')" style="background:none;border:none;cursor:pointer;color:var(--primary);font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.5px;padding:0;">SEE ALL PUBLICATIONS ›</button>
+        </div>
 
-  <p class="pub-venue accepted">
-    Accepted — 28th ICCIT, 2025
-  </p>
+        <div>
+          <div class="pub-item">
+            <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2025).</div>
+            <a class="pub-title-link" href="https://www.researchgate.net/publication/398727512" target="_blank">Memory-Efficient Deep Learning Architectures for Water Body Segmentation in Satellite Imagery.</a>
+            <div class="pub-venue accepted"><em>Accepted — 28th ICCIT, 2025.</em></div>
+            <div class="pub-badges">
+              <a class="badge" href="https://www.researchgate.net/publication/398727512" target="_blank">ResearchGate</a>
+            </div>
+          </div>
 
-  <p class="pub-desc">
-    This paper presents a comparative study of memory-efficient deep learning architectures
-    for water body segmentation from satellite imagery. An ensemble-based approach is proposed
-    to balance accuracy and computational efficiency, making the model suitable for
-    resource-constrained environments.
-  </p>
+          <div class="pub-item">
+            <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2025).</div>
+            <a class="pub-title-link" href="https://www.researchgate.net/publication/398727567" target="_blank">Transformer-Based Multi-Label Disease Prediction from Radiology Reports.</a>
+            <div class="pub-venue accepted"><em>Accepted — 28th ICCIT, 2025.</em></div>
+            <div class="pub-badges">
+              <a class="badge" href="https://www.researchgate.net/publication/398727567" target="_blank">ResearchGate</a>
+            </div>
+          </div>
 
-  <p class="pub-links">
-    <a href="https://www.researchgate.net/publication/398727512_Memory-Efficient_Deep_Learning_Architectures_for_" target="_blank">ResearchGate</a>
-  </p>
-</div>
+          <div class="pub-item">
+            <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2026).</div>
+            <a class="pub-title-link" href="https://www.researchgate.net/publication/401342979" target="_blank">An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN.</a>
+            <div class="pub-venue"><em>Accepted — 2nd QPAIN, 2026.</em></div>
+            <div class="pub-badges">
+              <a class="badge" href="https://www.researchgate.net/publication/401342979" target="_blank">ResearchGate</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Publication 2 -->
-<div class="pub-item">
-  <h3 class="pub-title">
-    Transformer-Based Multi-Label Disease Prediction from Radiology Reports
-  </h3>
+    <!-- Experience band -->
+    <div class="band">
+      <div class="section-layout">
+        <div class="section-label">
+          <h2>Experience</h2>
+          <button class="see-all" onclick="showSection('experience')" style="background:none;border:none;cursor:pointer;color:var(--primary);font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.5px;padding:0;">ALL EXPERIENCE ›</button>
+        </div>
 
-  <p class="pub-venue accepted">
-    Accepted — 28th ICCIT, 2025
-  </p>
+        <div>
+          <div style="font-weight:700;margin-bottom:10px;font-size:14px;">Selected Roles</div>
+          <ul style="list-style:disc;padding-left:20px;font-size:14px;color:var(--text);">
+            <li style="margin-bottom:8px;"><strong>Software Development Intern</strong> — Real-world software development experience</li>
+            <li style="margin-bottom:8px;"><strong>Research Assistant (AI &amp; NLP)</strong> — Under supervision of Assoc. Prof. Shyla Afroge, RUET; IEEE publications</li>
+            <li style="margin-bottom:8px;"><strong>HR Lead</strong> — RUET Computer Society</li>
+            <li style="margin-bottom:8px;"><strong>Research Mentor</strong> — Guided 2 junior students through conference paper submissions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-  <p class="pub-desc">
-    This work explores transformer-based natural language processing models for multi-label
-    disease prediction from unstructured radiology reports. The study demonstrates the
-    effectiveness of attention-based architectures in extracting clinical insights from
-    medical text data.
-  </p>
+    <!-- Awards band -->
+    <div class="band-alt">
+      <div class="section-layout">
+        <div class="section-label">
+          <h2>Awards &amp; Certificates</h2>
+          <button class="see-all" onclick="showSection('awards')" style="background:none;border:none;cursor:pointer;color:var(--primary);font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.5px;padding:0;">ALL AWARDS ›</button>
+        </div>
 
-  <p class="pub-links">
-    <a href="https://www.researchgate.net/publication/398727567_Transformer-Based_Multi-Label_Disease_Prediction_from_Radiology_Reports" target="_blank">ResearchGate</a>
-  </p>
-</div>
+        <div>
+          <ul style="list-style:none;font-size:14px;">
+            <li style="margin-bottom:10px;display:flex;gap:10px;"><i class="fa-solid fa-award" style="color:var(--accent);margin-top:3px;flex-shrink:0;"></i><span><strong>EDGE Training Program</strong> — 8-month professional program, Bangladesh Government</span></li>
+            <li style="margin-bottom:10px;display:flex;gap:10px;"><i class="fa-solid fa-certificate" style="color:var(--accent);margin-top:3px;flex-shrink:0;"></i><span><strong>Oracle Generative AI Certification</strong> — GenAI concepts &amp; prompt engineering</span></li>
+            <li style="margin-bottom:10px;display:flex;gap:10px;"><i class="fa-solid fa-certificate" style="color:var(--accent);margin-top:3px;flex-shrink:0;"></i><span><strong>Mathematics for ML</strong> — Duke University via Coursera</span></li>
+            <li style="margin-bottom:10px;display:flex;gap:10px;"><i class="fa-solid fa-certificate" style="color:var(--accent);margin-top:3px;flex-shrink:0;"></i><span><strong>Machine Learning with Python</strong> — Coursera certification</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-  <!-- Publication 3 -->
-<div class="pub-item">
-  <h3 class="pub-title">
-    An Explainable Deep Learning Framework for Multi-Class Alzheimer’s Diagnosis with Multi-Scale CNN
-  </h3>
+    <!-- Contact band -->
+    <div class="band">
+      <div class="section-layout">
+        <div class="section-label">
+          <h2>Contact</h2>
+        </div>
+        <div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:ashraful.hossen.akash@email.com">ashraful.hossen.akash@email.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Rajshahi, Bangladesh</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <p class="pub-venue">
-    Accepted — 2nd QPAIN, 2026
-  </p>
+  </div><!-- /home -->
 
-  <p class="pub-desc">
-    This research presents an explainable deep learning framework for multi-class
-    Alzheimer’s disease diagnosis using structural MRI scans. The study proposes a
-    custom multi-scale CNN architecture combined with transfer learning models and
-    ensemble techniques to improve classification robustness.
-  </p>
 
-  <p class="pub-links">
-    <a href="https://www.researchgate.net/publication/401342979_An_Explainable_Deep_Learning_Framework_for_Multi-Class_Alzheimer's_Diagnosis_with_Multi-Scale_CNN" target="_blank">ResearchGate</a>
-  </p>
-</div>
-  
-</div>
+  <!-- ══ PUBLICATIONS ══ -->
+  <div id="publications" class="section">
+    <div class="band">
+      <div class="section-layout">
+        <div class="section-label">
+          <h2>Publications</h2>
+        </div>
+        <div>
 
- <!-- PROJECTS -->
-<div id="projects" class="section">
+          <div class="pub-item">
+            <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2025).</div>
+            <a class="pub-title-link" href="https://www.researchgate.net/publication/398727512" target="_blank">
+              Memory-Efficient Deep Learning Architectures for Water Body Segmentation in Satellite Imagery: A Comparative Analysis and Ensemble Approach.
+            </a>
+            <div class="pub-venue accepted"><em>Accepted — 28th International Conference on Computer and Information Technology (ICCIT), 2025.</em></div>
+            <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:8px;">
+              A comparative study of memory-efficient deep learning architectures for satellite-based water body segmentation, with an ensemble approach balancing accuracy and computational efficiency for resource-constrained environments.
+            </p>
+            <div class="pub-badges">
+              <a class="badge" href="https://www.researchgate.net/publication/398727512" target="_blank">ResearchGate</a>
+            </div>
+          </div>
 
-  <h2>Projects</h2>
+          <div class="pub-item">
+            <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2025).</div>
+            <a class="pub-title-link" href="https://www.researchgate.net/publication/398727567" target="_blank">
+              Transformer-Based Multi-Label Disease Prediction from Radiology Reports.
+            </a>
+            <div class="pub-venue accepted"><em>Accepted — 28th International Conference on Computer and Information Technology (ICCIT), 2025.</em></div>
+            <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:8px;">
+              Explores transformer-based NLP models for multi-label disease prediction from unstructured radiology reports, demonstrating the effectiveness of attention-based architectures in extracting clinical insights from medical text.
+            </p>
+            <div class="pub-badges">
+              <a class="badge" href="https://www.researchgate.net/publication/398727567" target="_blank">ResearchGate</a>
+            </div>
+          </div>
 
-  <!-- Project 1 -->
-  <div class="project-item">
-    <h3 class="project-title">
-      AlzDetect-AI
-    </h3>
+          <div class="pub-item">
+            <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2026).</div>
+            <a class="pub-title-link" href="https://www.researchgate.net/publication/401342979" target="_blank">
+              An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN.
+            </a>
+            <div class="pub-venue"><em>Accepted — 2nd International Conference on QPAIN, 2026.</em></div>
+            <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:8px;">
+              An explainable DL framework for multi-class Alzheimer's disease diagnosis from structural MRI, combining a custom multi-scale CNN with transfer learning and ensemble techniques to improve classification robustness.
+            </p>
+            <div class="pub-badges">
+              <a class="badge" href="https://www.researchgate.net/publication/401342979" target="_blank">ResearchGate</a>
+            </div>
+          </div>
 
-    <p class="project-desc">
-      An AI-powered system for early detection and classification of Alzheimer’s disease
-      from brain MRI scans using deep learning techniques.
-    </p>
-
-    <p class="project-tech">
-      <strong>Technologies:</strong> Python, PyTorch, CNN, Medical Imaging
-    </p>
-
-    <p class="project-links">
-      <a href="https://github.com/ashraful-akash/AlzDetect-Ai" target="_blank">
-        <i class="fa-brands fa-github"></i> GitHub Repository
-      </a>
-    </p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Project 2 -->
-  <div class="project-item">
-    <h3 class="project-title">
-      Restaurant Management Website
-    </h3>
+  <!-- ══ PROJECTS ══ -->
+  <div id="projects" class="section">
+    <div class="band">
+      <div class="section-layout">
+        <div class="section-label"><h2>Projects</h2></div>
+        <div>
 
-    <p class="project-desc">
-      A responsive restaurant management web application that allows users to browse menus,
-      place orders, and manage reservations through a clean user interface.
-    </p>
+          <div class="project-item">
+            <h3>AlzDetect-AI</h3>
+            <p>AI-powered early detection and classification of Alzheimer's disease from brain MRI scans using deep learning techniques.</p>
+            <div><span class="tech-tag">Python</span><span class="tech-tag">PyTorch</span><span class="tech-tag">CNN</span><span class="tech-tag">Medical Imaging</span></div>
+            <p style="margin-top:8px;"><a href="https://github.com/ashraful-akash/AlzDetect-Ai" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repository</a></p>
+          </div>
 
-    <p class="project-tech">
-      <strong>Technologies:</strong> HTML, CSS, JavaScript, Backend Framework
-    </p>
+          <div class="project-item">
+            <h3>Restaurant Management Website</h3>
+            <p>A responsive web application for browsing menus, placing orders, and managing reservations through a clean user interface.</p>
+            <div><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Backend Framework</span></div>
+            <p style="margin-top:8px;"><a href="https://github.com/ashraful-akash/restaurant_site" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repository</a></p>
+          </div>
 
-    <p class="project-links">
-      <a href="https://github.com/ashraful-akash/restaurant_site" target="_blank">
-        <i class="fa-brands fa-github"></i> GitHub Repository
-      </a>
-    </p>
+          <div class="project-item">
+            <h3>Meal Manager Android App</h3>
+            <p>An Android application for planning daily meals, tracking nutrition, and managing food expenses efficiently.</p>
+            <div><span class="tech-tag">Java</span><span class="tech-tag">Android Studio</span><span class="tech-tag">SQLite</span></div>
+            <p style="margin-top:8px;"><a href="https://github.com/ashraful-akash" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repository</a></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Project 3 -->
-  <div class="project-item">
-    <h3 class="project-title">
-      Meal Manager Android App
-    </h3>
+  <!-- ══ EXPERIENCE ══ -->
+  <div id="experience" class="section">
+    <div class="band">
+      <div class="section-layout">
+        <div class="section-label"><h2>Experience</h2></div>
+        <div>
 
-    <p class="project-desc">
-      An Android application designed to help users plan daily meals, track nutrition,
-      and manage food expenses efficiently.
-    </p>
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <h3>Software Development Intern</h3>
+              <p>Completed a 3-month internship at a software company, gaining hands-on experience in real-world software development and industry workflows.</p>
+              <a href="https://drive.google.com/file/d/179SyK7nIsW4y1e-aC_VIHnlGupl81HfH/view?usp=drivesdk" target="_blank" style="font-size:13px;">Certificate ›</a>
+            </div>
+          </div>
 
-    <p class="project-tech">
-      <strong>Technologies:</strong> Java, Android Studio, SQLite
-    </p>
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <h3>Research Assistant (AI &amp; NLP)</h3>
+              <p>Conducted research in AI and NLP under <a href="https://www.ruet.ac.bd/shylaruet" target="_blank">Assoc. Prof. Shyla Afroge</a>, RUET. Contributed to multiple IEEE conference publications.</p>
+            </div>
+          </div>
 
-    <p class="project-links">
-      <a href="https://github.com/ashraful-akash" target="_blank">
-        <i class="fa-brands fa-github"></i> GitHub Repository
-      </a>
-    </p>
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <h3>Competitive Programming</h3>
+              <p>Actively participated in Codeforces contests, strengthening algorithmic thinking and problem-solving skills.</p>
+              <a href="https://codeforces.com/profile/ash_ra_ful" target="_blank" style="font-size:13px;">Codeforces Profile ›</a>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <h3>Dataset Developer (Kaggle)</h3>
+              <p>Created and published an Alzheimer's disease–related dataset on Kaggle, contributing to open research and reproducible AI.</p>
+              <a href="https://www.kaggle.com/ashrafulhossenakash" target="_blank" style="font-size:13px;">Kaggle Profile ›</a>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <h3>Research Mentor</h3>
+              <p>Mentored 2 students in preparing and submitting conference research papers, providing guidance on methodology, writing, and submission.</p>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <h3>Tutor</h3>
+              <p>Provided tutoring in <strong>Mathematics, ICT (Numerical Methods, C Programming, HTML), and Physics</strong>. Tutored 3 students (2022) and 1 student (2024–2025).</p>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <h3>Q&amp;A Instructor — Udvash</h3>
+              <p>Served as a Q&amp;A teacher for one year, supporting students in academic preparation and problem-solving.</p>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <h3>HR Lead — RUET Computer Society</h3>
+              <p>Responsible for organizational coordination, member management, and leadership activities.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 
-</div>
+  <!-- ══ AWARDS ══ -->
+  <div id="awards" class="section">
+    <div class="band">
+      <div class="section-layout">
+        <div class="section-label"><h2>Awards &amp; Certificates</h2></div>
+        <div>
 
-    <!-- EXPERIENCE -->
-<div id="experience" class="section">
+          <div class="award-item">
+            <i class="fa-solid fa-award award-icon"></i>
+            <div class="award-body">
+              <h3>EDGE Training Program</h3>
+              <p>Successfully completed an <strong>8-month professional training program</strong> organized by the <strong>Bangladesh Government</strong>.</p>
+              <a href="https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6655-00010" target="_blank" style="font-size:13px;">Certificate ›</a>
+            </div>
+          </div>
 
-  <h2>Experience</h2>
+          <div class="award-item">
+            <i class="fa-solid fa-certificate award-icon"></i>
+            <div class="award-body">
+              <h3>Oracle Generative AI Certification</h3>
+              <p>Earned certification covering foundational GenAI concepts, prompt engineering, and enterprise AI use cases.</p>
+              <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=F3F16DC4AC6958CB01227F11646EE12E79265FA077BF4BD497C9FCA10D6AAA59" target="_blank" style="font-size:13px;">Certificate ›</a>
+            </div>
+          </div>
 
-  <!-- Experience 1 -->
-  <div class="exp-item">
-    <h3 class="exp-title">Software Development Intern</h3>
-    <p class="exp-desc">
-      Completed a 3-month internship at a software company, gaining hands-on experience
-      in real-world software development and industry workflows.
-    </p>
-    <p class="exp-links">
-      <a href="https://drive.google.com/file/d/179SyK7nIsW4y1e-aC_VIHnlGupl81HfH/view?usp=drivesdk"
-         target="_blank">
-        Certificate
-      </a>
-    </p>
+          <div class="award-item">
+            <i class="fa-solid fa-certificate award-icon"></i>
+            <div class="award-body">
+              <h3>Mathematics for Machine Learning — Duke University</h3>
+              <p>Comprehensive Coursera course covering linear algebra, calculus, probability, and optimization for ML.</p>
+              <a href="https://www.coursera.org/account/accomplishments/records/VLNECGAFXQYR" target="_blank" style="font-size:13px;">Certificate ›</a>
+            </div>
+          </div>
+
+          <div class="award-item">
+            <i class="fa-solid fa-certificate award-icon"></i>
+            <div class="award-body">
+              <h3>Machine Learning with Python</h3>
+              <p>Applied ML course covering supervised and unsupervised learning, model evaluation, and practical implementation.</p>
+              <a href="https://www.coursera.org/account/accomplishments/records/NA8TNG89JM8L" target="_blank" style="font-size:13px;">Certificate ›</a>
+            </div>
+          </div>
+
+          <div class="award-item">
+            <i class="fa-solid fa-handshake award-icon"></i>
+            <div class="award-body">
+              <h3>Volunteer Certificate</h3>
+              <p>Awarded for volunteering at a university-level academic conference.</p>
+              <a href="https://drive.google.com/YOUR_VOLUNTEER_CERTIFICATE" target="_blank" style="font-size:13px;">Certificate ›</a>
+            </div>
+          </div>
+
+          <div class="award-item">
+            <i class="fa-solid fa-chalkboard-user award-icon"></i>
+            <div class="award-body">
+              <h3>Seminar Participation</h3>
+              <p>Attended multiple technical seminars on emerging technologies and current research trends.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Experience 2 -->
-  <div class="exp-item">
-    <h3 class="exp-title">Research Assistant (AI & NLP)</h3>
-    <p class="exp-desc">
-      Conducted research in Artificial Intelligence and Natural Language Processing
-      under the supervision of <a href="https://www.ruet.ac.bd/shylaruet" target="_blank">Shyla Afroge</a>, Associate Professor, RUET.
-      Contributed to multiple IEEE conference publications.
-    </p>
-  </div>
+</div><!-- /page-wrap -->
 
-  <!-- Experience 3 -->
-  <div class="exp-item">
-    <h3 class="exp-title">Competitive Programming</h3>
-    <p class="exp-desc">
-      Actively participated in numerous Codeforces contests, strengthening algorithmic
-      thinking and problem-solving skills.
-    </p>
-    <p class="exp-links">
-      <a href="https://codeforces.com/profile/ash_ra_ful" target="_blank">
-        Codeforces Profile
-      </a>
-    </p>
-  </div>
+<footer>
+  <p>© 2025 Md Ashraful Hossen Akash &nbsp;·&nbsp; Rajshahi University of Engineering &amp; Technology, Bangladesh</p>
+</footer>
 
-  <!-- Experience 4 -->
-  <div class="exp-item">
-    <h3 class="exp-title">Dataset Developer (Kaggle)</h3>
-    <p class="exp-desc">
-      Created and published an Alzheimer’s disease–related dataset on Kaggle,
-      contributing to open research and reproducible AI research.
-    </p>
-    <p class="exp-links">
-      <a href="https://www.kaggle.com/YOUR_DATASET_LINK" target="_blank">
-        Kaggle Dataset
-      </a>
-    </p>
-  </div>
-
-  <!-- Experience 5 -->
-  <div class="exp-item">
-    <h3 class="exp-title">Research Mentor</h3>
-    <p class="exp-desc">
-      Mentored 2 students in preparing and submitting conference research papers,
-      providing guidance on methodology, writing, and submission process.
-    </p>
-  </div>
-
-  <!-- Experience 6 -->
-  <div class="exp-item">
-    <h3 class="exp-title">Tutor</h3>
-    <p class="exp-desc">
-      Provided tutoring in <strong>Mathematics, ICT (Numerical Methods, C Programming, HTML),
-      and Physics</strong>. Tutored 3 students for one month (2022) and 1 student for
-      one year (2024–2025).
-    </p>
-  </div>
-
-  <!-- Experience 7 -->
-  <div class="exp-item">
-    <h3 class="exp-title">Q&A Instructor</h3>
-    <p class="exp-desc">
-      Served as a Q&A teacher at <strong>Udvash</strong> for one year, supporting students
-      in academic preparation and problem-solving.
-    </p>
-  </div>
-
-  <!-- Experience 8 -->
-  <div class="exp-item">
-    <h3 class="exp-title">HR Lead</h3>
-    <p class="exp-desc">
-      RUET Computer Society — responsible for organizational coordination, member
-      management, and leadership activities.
-    </p>
-  </div>
-
-</div>
-
-<!-- AWARDS -->
-<div id="awards" class="section">
-
-  <h2>Awards & Certificates</h2>
-
-  <!-- Award 1 -->
-  <div class="award-item">
-    <h3 class="award-title">EDGE Training Program</h3>
-    <p class="award-desc">
-      Successfully completed an <strong>8-month professional training program</strong>
-      organized by the <strong>Bangladesh Government</strong>.
-    </p>
-    <p class="award-links">
-      <a href="https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6655-00010" target="_blank">
-        Certificate
-      </a>
-    </p>
-  </div>
-
-  <!-- Award 2-->
-  <div class="award-item">
-    <h3 class="award-title">Oracle Generative AI Certification</h3>
-    <p class="award-desc">
-      Earned certification in <strong>Oracle Generative AI</strong>, covering
-      foundational GenAI concepts, prompt engineering, and enterprise AI use cases.
-    </p>
-    <p class="award-links">
-      <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=F3F16DC4AC6958CB01227F11646EE12E79265FA077BF4BD497C9FCA10D6AAA59" target="_blank">
-        Certificate
-      </a>
-    </p>
-  </div>
-
-  <!-- Award 3 -->
-<div class="award-item">
-  <h3 class="award-title">Mathematics for Machine Learning</h3>
-  <p class="award-desc">
-    Completed a comprehensive course by <strong>Duke University</strong> covering
-    linear algebra, calculus, probability, and optimization techniques essential
-    for machine learning.
-  </p>
-  <p class="award-links">
-    <a href="https://www.coursera.org/account/accomplishments/records/VLNECGAFXQYR" target="_blank">
-      Certificate
-    </a>
-  </p>
-</div>
-
-<!-- Award 4 -->
-<div class="award-item">
-  <h3 class="award-title">Machine Learning with Python</h3>
-  <p class="award-desc">
-    Completed an applied machine learning course focusing on supervised and
-    unsupervised learning techniques using Python, including model evaluation
-    and practical implementation.
-  </p>
-  <p class="award-links">
-    <a href="https://www.coursera.org/account/accomplishments/records/NA8TNG89JM8L" target="_blank">
-      Certificate
-    </a>
-  </p>
-</div>
-
-  
-  <!-- Award 5-->
-  <div class="award-item">
-    <h3 class="award-title">Volunteer Certificate</h3>
-    <p class="award-desc">
-      Awarded for volunteering at a university-level academic conference.
-    </p>
-    <p class="award-links">
-      <a href="https://drive.google.com/YOUR_VOLUNTEER_CERTIFICATE" target="_blank">
-        Certificate
-      </a>
-    </p>
-  </div>
-
-  <!-- Award 6-->
-  <div class="award-item">
-    <h3 class="award-title">Seminar Participation</h3>
-    <p class="award-desc">
-      Attended multiple technical seminars on emerging technologies
-      and current research trends.
-    </p>
-  </div>
-
-</div>
-
-<!-- SCRIPT AT THE END (BEST PRACTICE) -->
 <script>
-  function showSection(sectionId) {
-  document.querySelectorAll('.section').forEach(sec =>
-    sec.classList.remove('active')
-  );
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id)?.classList.add('active');
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.nav-btn[data-target="${id}"]`)?.classList.add('active');
+    document.getElementById('mobileMenu')?.classList.remove('show');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
 
-  document.getElementById(sectionId)?.classList.add('active');
-
-  document.querySelectorAll('.nav-btn').forEach(btn =>
-    btn.classList.remove('active')
-  );
-
-  document
-    .querySelector(`.nav-btn[data-target="${sectionId}"]`)
-    ?.classList.add('active');
-
-  // Close mobile menu
-  document.getElementById("mobileMenu")?.classList.remove("show");
-
-  // Prevent jump
-  window.scrollTo({ top: 0, behavior: 'instant' });
-}
-
-</script>
-    
-<script>
   function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("show");
-}
+    document.getElementById('mobileMenu').classList.toggle('show');
+  }
 </script>
-
-
-
 
 </body>
 </html>
