@@ -22,6 +22,10 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* Prevent browser from jumping to hash anchor */
+    html { scroll-behavior: auto; }
+    :target { scroll-margin-top: 0; }
+
     body {
       font-family: 'Merriweather Sans', sans-serif;
       color: var(--text);
@@ -634,7 +638,7 @@
 
           <div class="pub-item">
             <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2026).</div>
-            <a class="pub-title-link" href="https://www.researchgate.net/publication/401342979" target="_blank">
+            <a class="pub-title-link" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank">
               An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN.
             </a>
             <div class="pub-venue"><em>Accepted — 2nd International Conference on QPAIN, 2026.</em></div>
@@ -643,6 +647,7 @@
             </p>
             <div class="pub-badges">
               <a class="badge" href="https://www.researchgate.net/publication/401342979" target="_blank">ResearchGate</a>
+              <a class="pub-title-link" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank">
             </div>
           </div>
 
@@ -912,12 +917,15 @@
     showSection(id, false);
   });
 
-  // On page load, read the hash
+  // On page load, read the hash and scroll to top
   (function() {
+    // Immediately scroll to top before browser tries to jump to anchor
+    window.scrollTo(0, 0);
     const id = location.hash.slice(1) || 'home';
     showSection(id, false);
-    // Replace initial state so back button works from first page
     history.replaceState({ section: id }, '', '#' + id);
+    // Override any delayed browser scroll-to-anchor
+    setTimeout(function() { window.scrollTo(0, 0); }, 0);
   })();
 </script>
 
