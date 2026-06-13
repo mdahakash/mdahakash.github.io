@@ -897,16 +897,10 @@
   function showSection(id) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.getElementById(id)?.classList.add('active');
-
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector(.nav-btn[data-target="${id}"])?.classList.add('active');
-
+    document.querySelector(`.nav-btn[data-target="${id}"]`)?.classList.add('active');
     document.getElementById('mobileMenu')?.classList.remove('show');
-
-    // Update URL
-    window.location.hash = id;
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   function toggleMenu() {
