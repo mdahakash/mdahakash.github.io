@@ -52,6 +52,7 @@
       font-size: 17px;
       color: var(--text);
       letter-spacing: -0.2px;
+      cursor: pointer;
     }
 
     .nav-links {
@@ -71,6 +72,8 @@
       border-radius: 4px;
       transition: color 0.15s;
       font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .nav-btn:hover, .nav-btn.active {
@@ -79,16 +82,6 @@
     }
 
     .nav-btn.active { font-weight: 700; color: var(--primary); }
-
-    .nav-icon-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--text-muted);
-      font-size: 15px;
-      padding: 6px 8px;
-      border-radius: 4px;
-    }
 
     .menu-toggle {
       display: none;
@@ -115,9 +108,7 @@
       padding-bottom: 48px;
     }
 
-    .hero-left {
-      text-align: center;
-    }
+    .hero-left { text-align: center; }
 
     .profile-pic {
       width: 180px;
@@ -160,8 +151,6 @@
     }
 
     .social-links a:hover { color: var(--primary-light); transform: translateY(-2px); text-decoration: none; }
-
-    .hero-right {}
 
     .hero-right p {
       text-align: justify;
@@ -224,9 +213,7 @@
     .section { display: none; }
     .section.active { display: block; }
 
-    .band {
-      padding: 48px 0;
-    }
+    .band { padding: 48px 0; }
 
     .band-alt {
       background: var(--bg-alt);
@@ -250,14 +237,22 @@
       line-height: 1.2;
     }
 
-    .section-label .see-all {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 13px;
+    .see-all-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
       color: var(--primary);
+      font-family: inherit;
+      font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: .5px;
+      padding: 0;
+      margin-top: 8px;
+      display: inline-block;
+      text-decoration: none;
     }
+
+    .see-all-btn:hover { text-decoration: underline; }
 
     /* ── PUBLICATIONS ── */
     .pub-item {
@@ -296,8 +291,6 @@
       margin-bottom: 8px;
       font-style: italic;
     }
-
-    .pub-venue.accepted { color: var(--text-muted); }
 
     .pub-badges {
       display: flex;
@@ -369,12 +362,7 @@
       margin-top: 6px;
     }
 
-    .exp-body h3 {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
+    .exp-body h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
     .exp-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
 
     /* ── AWARDS ── */
@@ -396,12 +384,7 @@
       margin-top: 2px;
     }
 
-    .award-body h3 {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
+    .award-body h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
     .award-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
 
     /* ── CONTACT ── */
@@ -464,18 +447,18 @@
 
 <!-- TOP NAVIGATION -->
 <header class="top-nav">
-  <div class="nav-brand">Ashraful Akash</div>
+  <div class="nav-brand" onclick="navigateTo('home')">Ashraful Akash</div>
 
   <button class="menu-toggle" onclick="toggleMenu()">
     <i class="fa-solid fa-bars"></i>
   </button>
 
   <nav class="nav-links" id="mobileMenu">
-    <button class="nav-btn active" data-target="home" onclick="showSection('home')">Home</button>
-    <button class="nav-btn" data-target="publications" onclick="showSection('publications')">Publications</button>
-    <button class="nav-btn" data-target="projects" onclick="showSection('projects')">Projects</button>
-    <button class="nav-btn" data-target="experience" onclick="showSection('experience')">Experience</button>
-    <button class="nav-btn" data-target="awards" onclick="showSection('awards')">Awards</button>
+    <a class="nav-btn" data-target="home" href="#home">Home</a>
+    <a class="nav-btn" data-target="publications" href="#publications">Publications</a>
+    <a class="nav-btn" data-target="projects" href="#projects">Projects</a>
+    <a class="nav-btn" data-target="experience" href="#experience">Experience</a>
+    <a class="nav-btn" data-target="awards" href="#awards">Awards</a>
     <a href="assets/myCV.pdf" class="nav-btn" target="_blank">CV</a>
   </nav>
 </header>
@@ -518,12 +501,10 @@
         </p>
         <p>
           I am currently working on a semi-supervised learning framework for retinal OCT image
-          classification with state-of-the-art
-          attention-based architectures.
+          classification with state-of-the-art attention-based architectures.
         </p>
 
         <div class="two-col">
-          <!-- Interests -->
           <div>
             <h3>Interests</h3>
             <ul>
@@ -534,8 +515,6 @@
               <li>Deep Learning Architectures</li>
             </ul>
           </div>
-
-          <!-- Education -->
           <div>
             <h3>Education</h3>
             <div class="edu-entry">
@@ -555,9 +534,8 @@
       <div class="section-layout">
         <div class="section-label">
           <h2>Recent Publications</h2>
-          <button class="see-all" onclick="showSection('publications')" style="background:none;border:none;cursor:pointer;color:var(--primary);font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.5px;padding:0;">SEE ALL PUBLICATIONS ›</button>
+          <a class="see-all-btn" href="#publications">SEE ALL PUBLICATIONS ›</a>
         </div>
-
         <div>
           <div class="pub-item">
             <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2026).</div>
@@ -596,9 +574,8 @@
       <div class="section-layout">
         <div class="section-label">
           <h2>Experience</h2>
-          <button class="see-all" onclick="showSection('experience')" style="background:none;border:none;cursor:pointer;color:var(--primary);font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.5px;padding:0;">ALL EXPERIENCE ›</button>
+          <a class="see-all-btn" href="#experience">ALL EXPERIENCE ›</a>
         </div>
-
         <div>
           <div style="font-weight:700;margin-bottom:10px;font-size:14px;">Selected Roles</div>
           <ul style="list-style:disc;padding-left:20px;font-size:14px;color:var(--text);">
@@ -616,9 +593,8 @@
       <div class="section-layout">
         <div class="section-label">
           <h2>Awards &amp; Certificates</h2>
-          <button class="see-all" onclick="showSection('awards')" style="background:none;border:none;cursor:pointer;color:var(--primary);font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.5px;padding:0;">ALL AWARDS ›</button>
+          <a class="see-all-btn" href="#awards">ALL AWARDS ›</a>
         </div>
-
         <div>
           <ul style="list-style:none;font-size:14px;">
             <li style="margin-bottom:10px;display:flex;gap:10px;"><i class="fa-solid fa-award" style="color:var(--accent);margin-top:3px;flex-shrink:0;"></i><span><strong>EDGE Training Program</strong> — 8-month professional program, Bangladesh Government</span></li>
@@ -633,9 +609,7 @@
     <!-- Contact band -->
     <div class="band">
       <div class="section-layout">
-        <div class="section-label">
-          <h2>Contact</h2>
-        </div>
+        <div class="section-label"><h2>Contact</h2></div>
         <div>
           <div class="contact-item">
             <i class="fa-solid fa-envelope"></i>
@@ -651,14 +625,11 @@
 
   </div><!-- /home -->
 
-
   <!-- ══ PUBLICATIONS ══ -->
   <div id="publications" class="section">
     <div class="band">
       <div class="section-layout">
-        <div class="section-label">
-          <h2>Publications</h2>
-        </div>
+        <div class="section-label"><h2>Publications</h2></div>
         <div>
 
           <div class="pub-item">
@@ -894,18 +865,60 @@
 </footer>
 
 <script>
-  function showSection(id) {
+  const SECTIONS = ['home', 'publications', 'projects', 'experience', 'awards'];
+
+  function showSection(id, pushState) {
+    if (!SECTIONS.includes(id)) id = 'home';
+
+    // Show/hide sections
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.getElementById(id)?.classList.add('active');
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector(`.nav-btn[data-target="${id}"]`)?.classList.add('active');
-    document.getElementById('mobileMenu')?.classList.remove('show');
+    document.getElementById(id).classList.add('active');
+
+    // Update active nav button
+    document.querySelectorAll('.nav-btn[data-target]').forEach(b => {
+      b.classList.toggle('active', b.dataset.target === id);
+    });
+
+    // Update URL hash without triggering hashchange again
+    if (pushState) {
+      history.pushState({ section: id }, '', '#' + id);
+    }
+
+    // Close mobile menu
+    document.getElementById('mobileMenu').classList.remove('show');
+
+    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('show');
+  function navigateTo(id) {
+    showSection(id, true);
   }
+
+  // Handle all anchor clicks with href="#something"
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const id = link.getAttribute('href').slice(1);
+    if (SECTIONS.includes(id)) {
+      e.preventDefault();
+      showSection(id, true);
+    }
+  });
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', function(e) {
+    const id = (e.state && e.state.section) || location.hash.slice(1) || 'home';
+    showSection(id, false);
+  });
+
+  // On page load, read the hash
+  (function() {
+    const id = location.hash.slice(1) || 'home';
+    showSection(id, false);
+    // Replace initial state so back button works from first page
+    history.replaceState({ section: id }, '', '#' + id);
+  })();
 </script>
 
 </body>
