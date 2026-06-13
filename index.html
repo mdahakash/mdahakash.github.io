@@ -471,7 +471,7 @@
 <div class="page-wrap">
 
   <!-- ══ HOME ══ -->
-  <div id="home" class="section active">
+  <div data-section="home" class="section active">
     <div class="hero">
 
       <!-- Left: profile card -->
@@ -543,11 +543,10 @@
         <div>
           <div class="pub-item">
             <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2026).</div>
-            <a class="pub-title-link" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank">An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN.</a>
-            <div class="pub-venue"><em>Published — 2nd QPAIN, 2026.</em></div>
+            <a class="pub-title-link" href="https://www.researchgate.net/publication/401342979" target="_blank">An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN.</a>
+            <div class="pub-venue"><em>Accepted — 2nd QPAIN, 2026.</em></div>
             <div class="pub-badges">
               <a class="badge" href="https://www.researchgate.net/publication/401342979" target="_blank">ResearchGate</a>
-              <a class="badge" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank">DOI</a>
             </div>
           </div>
 
@@ -631,7 +630,7 @@
   </div><!-- /home -->
 
   <!-- ══ PUBLICATIONS ══ -->
-  <div id="publications" class="section">
+  <div data-section="publications" class="section">
     <div class="band">
       <div class="section-layout">
         <div class="section-label"><h2>Publications</h2></div>
@@ -639,16 +638,15 @@
 
           <div class="pub-item">
             <div class="pub-meta"><i class="fa-regular fa-file"></i> Md Ashraful Hossen Akash et al. (2026).</div>
-            <a class="pub-title-link" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank">
+            <a class="pub-title-link" href="https://www.researchgate.net/publication/401342979" target="_blank">
               An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN.
             </a>
-            <div class="pub-venue"><em>Published — 2nd International Conference on QPAIN, 2026.</em></div>
+            <div class="pub-venue"><em>Accepted — 2nd International Conference on QPAIN, 2026.</em></div>
             <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:8px;">
               An explainable DL framework for multi-class Alzheimer's disease diagnosis from structural MRI, combining a custom multi-scale CNN with transfer learning and ensemble techniques to improve classification robustness.
             </p>
             <div class="pub-badges">
               <a class="badge" href="https://www.researchgate.net/publication/401342979" target="_blank">ResearchGate</a>
-              <a class="badge" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank">DOI</a>
             </div>
           </div>
 
@@ -688,7 +686,7 @@
   </div>
 
   <!-- ══ PROJECTS ══ -->
-  <div id="projects" class="section">
+  <div data-section="projects" class="section">
     <div class="band">
       <div class="section-layout">
         <div class="section-label"><h2>Projects</h2></div>
@@ -721,7 +719,7 @@
   </div>
 
   <!-- ══ EXPERIENCE ══ -->
-  <div id="experience" class="section">
+  <div data-section="experience" class="section">
     <div class="band">
       <div class="section-layout">
         <div class="section-label"><h2>Experience</h2></div>
@@ -800,7 +798,7 @@
   </div>
 
   <!-- ══ AWARDS ══ -->
-  <div id="awards" class="section">
+  <div data-section="awards" class="section">
     <div class="band">
       <div class="section-layout">
         <div class="section-label"><h2>Awards &amp; Certificates</h2></div>
@@ -871,21 +869,26 @@
 </footer>
 
 <script>
+  // Tell the browser WE handle scroll restoration, not it
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
   const SECTIONS = ['home', 'publications', 'projects', 'experience', 'awards'];
 
   function showSection(id, pushState) {
     if (!SECTIONS.includes(id)) id = 'home';
 
-    // Show/hide sections
+    // Show/hide via data-section (no real id anchors = no browser scroll jump)
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+    document.querySelector('.section[data-section="' + id + '"]').classList.add('active');
 
-    // Update active nav button
+    // Update active nav link
     document.querySelectorAll('.nav-btn[data-target]').forEach(b => {
       b.classList.toggle('active', b.dataset.target === id);
     });
 
-    // Update URL hash without triggering hashchange again
+    // Push to browser history
     if (pushState) {
       history.pushState({ section: id }, '', '#' + id);
     }
@@ -893,15 +896,16 @@
     // Close mobile menu
     document.getElementById('mobileMenu').classList.remove('show');
 
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    // Scroll to absolute top
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }
 
   function navigateTo(id) {
     showSection(id, true);
   }
 
-  // Handle all anchor clicks with href="#something"
+  // Intercept all internal hash link clicks
   document.addEventListener('click', function(e) {
     const link = e.target.closest('a[href^="#"]');
     if (!link) return;
@@ -912,21 +916,23 @@
     }
   });
 
-  // Handle browser back/forward
+  // Browser back/forward buttons
   window.addEventListener('popstate', function(e) {
     const id = (e.state && e.state.section) || location.hash.slice(1) || 'home';
     showSection(id, false);
   });
 
-  // On page load, read the hash and scroll to top
+  // Initial page load
   (function() {
-    // Immediately scroll to top before browser tries to jump to anchor
-    window.scrollTo(0, 0);
-    const id = location.hash.slice(1) || 'home';
-    showSection(id, false);
+    const id = SECTIONS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
     history.replaceState({ section: id }, '', '#' + id);
-    // Override any delayed browser scroll-to-anchor
-    setTimeout(function() { window.scrollTo(0, 0); }, 0);
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelector('.section[data-section="' + id + '"]').classList.add('active');
+    document.querySelectorAll('.nav-btn[data-target]').forEach(b => {
+      b.classList.toggle('active', b.dataset.target === id);
+    });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   })();
 </script>
 
