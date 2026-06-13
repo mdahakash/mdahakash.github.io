@@ -453,10 +453,6 @@
 <header class="top-nav">
   <div class="nav-brand" onclick="navigateTo('home')">Ashraful Akash</div>
 
-  <button class="menu-toggle" onclick="toggleMenu()">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-
   <nav class="nav-links" id="mobileMenu">
     <a class="nav-btn" data-target="home" href="#home">Home</a>
     <a class="nav-btn" data-target="publications" href="#publications">Publications</a>
@@ -465,6 +461,10 @@
     <a class="nav-btn" data-target="awards" href="#awards">Awards</a>
     <a href="assets/myCV.pdf" class="nav-btn" target="_blank">CV</a>
   </nav>
+
+  <button class="menu-toggle" id="menuToggleBtn" aria-label="Toggle menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
 </header>
 
 <!-- PAGE CONTENT -->
@@ -902,6 +902,25 @@
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('show');
+  }
+
+  // Wire up the hamburger button
+  document.getElementById('menuToggleBtn').addEventListener('click', function(e) {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('menuToggleBtn');
+    if (menu.classList.contains('show') && !menu.contains(e.target) && e.target !== btn) {
+      menu.classList.remove('show');
+    }
+  });
 
   function navigateTo(id) {
     showSection(id, true);
