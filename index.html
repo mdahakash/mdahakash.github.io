@@ -9,34 +9,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700&amp;family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
   <style>
     /* ══════════════════════ TOKENS ══════════════════════ */
+        /* ══════════════════════ TOKENS ══════════════════════ */
     :root {
-      /* Light mode (default) — muted teal/navy, a nod to medical imaging (OCT scan blues/teals) */
-      --primary: #0f6e6e;
-      --primary-light: #14918f;
-      --accent: #b5563c;         /* warm clay-brick accent for contrast, used sparingly */
-      --navy: #123049;
-      --text: #1b2528;
-      --text-muted: #5c6b6e;
-      --bg: #fbfcfc;
-      --bg-alt: #eef4f4;
-      --border: #dde6e6;
+      /* Light mode (default) — Professional Academic/Medical Blue */
+      --primary: #1e40af;       /* Deep trustworthy blue */
+      --primary-light: #2563eb; /* Brighter blue for hover/links */
+      --accent: #d97706;        /* Warm amber/gold for contrast */
+      --navy: #0f172a;          /* Very dark slate-blue */
+      --text: #1e293b;          /* Dark slate text */
+      --text-muted: #64748b;    /* Muted slate text */
+      --bg: #f8fafc;            /* Clean off-white */
+      --bg-alt: #f1f5f9;        /* Light gray-blue background */
+      --border: #cbd5e1;        /* Soft slate border */
       --card-bg: #ffffff;
       --nav-height: 56px;
       --sidebar-width: 270px;
-      --shadow: 0 1px 3px rgba(15,110,110,0.08);
+      --shadow: 0 1px 3px rgba(30, 64, 175, 0.08);
     }
 
     [data-theme="dark"] {
-      --primary: #4fd6d1;
-      --primary-light: #7fe5e0;
-      --accent: #e0876a;
-      --navy: #cfe3ea;
-      --text: #e7eeee;
-      --text-muted: #9db0b2;
-      --bg: #0d1618;
-      --bg-alt: #121d20;
-      --border: #233437;
-      --card-bg: #131f22;
+      --primary: #60a5fa;       /* Soft bright blue for dark mode */
+      --primary-light: #93c5fd;
+      --accent: #f59e0b;        /* Bright amber/gold */
+      --navy: #f8fafc;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --bg: #0f172a;            /* Deep slate background */
+      --bg-alt: #1e293b;        /* Lighter slate for cards/sections */
+      --border: #334155;
+      --card-bg: #1e293b;
       --shadow: 0 1px 3px rgba(0,0,0,0.4);
     }
 
@@ -264,7 +265,7 @@
       flex-direction: column;
       transition: transform 0.15s, box-shadow 0.15s;
     }
-    .project-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(15,110,110,0.15); }
+    .project-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(30, 64, 175, 0.15); }
     .project-card .card-icon {
       width: 38px; height: 38px;
       border-radius: 8px;
