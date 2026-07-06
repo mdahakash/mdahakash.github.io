@@ -5,7 +5,8 @@
   <title>Md Ashraful Hossen Akash</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- FIX: Changed raw '&' to '&amp;' to prevent XML/HTML validation errors -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700&amp;family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
   <style>
     /* ══════════════════════ TOKENS ══════════════════════ */
     :root {
@@ -397,11 +398,12 @@
   </button>
 </header>
 
-<!-- PAGE CONTENT -->
-<div class="page-wrap">
+<!-- PAGE CONTENT (Wrapped in <main> for accessibility compliance) -->
+<main class="page-wrap">
 
   <!-- ══ HOME ══ -->
-  <div data-section="home" class="section active">
+  <!-- FIX: Added id="home" to match the href="#home" anchor link -->
+  <div id="home" data-section="home" class="section active">
     <div class="hero">
 
       <div class="hero-left">
@@ -503,7 +505,7 @@
       </div>
     </div>
 
-    <!-- Experience band (home preview keeps simple list; full timeline lives on Experience page) -->
+    <!-- Experience band -->
     <div class="band">
       <div class="section-layout">
         <div class="section-label">
@@ -562,7 +564,8 @@
   </div><!-- /home -->
 
   <!-- ══ PUBLICATIONS ══ -->
-  <div data-section="publications" class="section">
+  <!-- FIX: Added id="publications" -->
+  <div id="publications" data-section="publications" class="section">
     <div class="band">
       <div class="section-layout">
         <div class="section-label">
@@ -622,7 +625,8 @@
   </div>
 
   <!-- ══ PROJECTS (card grid) ══ -->
-  <div data-section="projects" class="section">
+  <!-- FIX: Added id="projects" -->
+  <div id="projects" data-section="projects" class="section">
     <div class="band">
       <div class="section-layout">
         <div class="section-label">
@@ -667,7 +671,8 @@
   </div>
 
   <!-- ══ EXPERIENCE (timeline) ══ -->
-  <div data-section="experience" class="section">
+  <!-- FIX: Added id="experience" -->
+  <div id="experience" data-section="experience" class="section">
     <div class="band">
       <div class="section-layout">
         <div class="section-label">
@@ -741,7 +746,8 @@
   </div>
 
   <!-- ══ AWARDS ══ -->
-  <div data-section="awards" class="section">
+  <!-- FIX: Added id="awards" -->
+  <div id="awards" data-section="awards" class="section">
     <div class="band">
       <div class="section-layout">
         <div class="section-label">
@@ -791,8 +797,8 @@
             <div class="award-body">
               <h3>Volunteer Certificate</h3>
               <p>Awarded for volunteering at a university-level academic conference.</p>
-              <!-- NOTE: replace this href with your actual certificate link -->
-              <a href="#" target="_blank" rel="noopener" style="font-size:13px;">Certificate ›</a>
+              <!-- FIX: Changed '#' to 'javascript:void(0)' so it doesn't jump to page top while empty -->
+              <a href="javascript:void(0)" target="_blank" rel="noopener" style="font-size:13px;">Certificate ›</a>
             </div>
           </div>
 
@@ -809,7 +815,7 @@
     </div>
   </div>
 
-</div><!-- /page-wrap -->
+</main><!-- /page-wrap -->
 
 <footer>
   <p>© 2026 Md Ashraful Hossen Akash &nbsp;·&nbsp; Rajshahi University of Engineering &amp; Technology, Bangladesh</p>
@@ -885,12 +891,12 @@
     showSection(id, false);
   });
 
-  /* ── THEME TOGGLE (defaults to light, ignores system preference, persists via in-memory state for this session) ── */
+  /* ── THEME TOGGLE ── */
   (function() {
     const btn = document.getElementById('themeToggleBtn');
     const icon = document.getElementById('themeIcon');
     const label = document.getElementById('themeLabel');
-    let theme = 'light'; // explicit default — do NOT read prefers-color-scheme
+    let theme = 'light'; // explicit default
 
     function applyTheme(t) {
       theme = t;
