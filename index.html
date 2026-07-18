@@ -21,7 +21,7 @@
       --border: #cbd5e1;        /* Soft slate border */
       --card-bg: #ffffff;
       --nav-height: 56px;
-      --sidebar-width: 230px;
+      --sidebar-width: 270px;
       --shadow: 0 1px 3px rgba(30, 64, 175, 0.08);
     }
 
@@ -134,18 +134,19 @@
     .theme-toggle {
       display: flex;
       align-items: center;
-      gap: 6px;
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
+      justify-content: center;
+      background: none;
+      border: none;
       cursor: pointer;
-      font-family: inherit;
-      font-size: 13px;
-      color: var(--text);
-      padding: 6px 12px;
-      border-radius: 20px;
+      font-size: 17px;
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
       margin-left: 8px;
+      transition: color 0.15s, background 0.15s;
     }
-    .theme-toggle:hover { border-color: var(--primary); }
+    .theme-toggle:hover { color: var(--primary); background: var(--bg-alt); }
 
     .menu-toggle {
       display: none;
@@ -160,7 +161,7 @@
     .page-wrap {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 4px 60px;
+      padding: 40px 24px 60px;
     }
 
     /* ── HOME: two-column hero ── */
@@ -172,7 +173,7 @@
       padding-bottom: 48px;
     }
 
-    .hero-left { text-align: left; }
+    .hero-left { text-align: center; }
 
     .profile-pic {
       width: 180px;
@@ -180,20 +181,20 @@
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      margin: 0 0 16px;
+      margin: 0 auto 16px;
       border: 3px solid var(--bg-alt);
     }
 
-    .hero-name { font-size: 19px; font-weight: 700; margin-bottom: 4px; white-space: nowrap; }
+    .hero-name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
     .hero-role { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; }
     .hero-institute a { font-size: 14px; color: var(--primary); }
 
     .social-links {
       display: flex;
-      justify-content: flex-start;
-      gap: 6px;
+      justify-content: center;
+      gap: 12px;
       margin-top: 16px;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
     }
 
     .social-links a {
@@ -228,7 +229,7 @@
     .section { display: none; }
     .section.active { display: block; }
     .band { padding: 48px 0; }
-    .band-alt { background: var(--bg-alt); margin-left: -4px; margin-right: -4px; padding: 48px 4px; }
+    .band-alt { background: var(--bg-alt); margin-left: -24px; margin-right: -24px; padding: 48px 24px; }
 
     .section-layout { display: grid; grid-template-columns: var(--sidebar-width) 1fr; gap: 48px; align-items: start; }
     .section-label h2 { font-size: 34px; font-weight: 400; color: var(--navy); line-height: 1.2; font-family: 'Source Serif 4', serif; }
@@ -365,8 +366,6 @@
       .theme-toggle { margin-left: 0; margin-top: 8px; }
       .hero, .section-layout, .two-col { grid-template-columns: 1fr; }
       .hero-left { margin-bottom: 16px; }
-      .hero-name { white-space: normal; }
-      .social-links { flex-wrap: wrap; }
       .band-alt { margin-left: -24px; margin-right: -24px; }
       .project-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -391,7 +390,6 @@
     <a href="assets/myCV.pdf" class="nav-btn" target="_blank" rel="noopener noreferrer">CV</a>
     <button class="theme-toggle" id="themeToggleBtn" aria-label="Switch to dark mode" aria-pressed="false">
       <i class="fa-solid fa-moon" id="themeIcon" aria-hidden="true"></i>
-      <span id="themeLabel">Dark mode</span>
     </button>
   </nav>
 
@@ -892,7 +890,6 @@
   (function() {
     const btn = document.getElementById('themeToggleBtn');
     const icon = document.getElementById('themeIcon');
-    const label = document.getElementById('themeLabel');
     let theme = 'light'; // explicit default
 
     function applyTheme(t) {
@@ -902,7 +899,6 @@
       btn.setAttribute('aria-pressed', String(isDark));
       btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
       icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-      label.textContent = isDark ? 'Light mode' : 'Dark mode';
     }
 
     btn.addEventListener('click', function() {
