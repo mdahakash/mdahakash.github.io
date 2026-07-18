@@ -47,13 +47,14 @@
       font-family: 'Merriweather Sans', sans-serif;
       color: var(--text);
       background: var(--bg);
-      font-size: 15px;
-      line-height: 1.7;
+      font-size: 15.5px;
+      line-height: 1.75;
+      letter-spacing: 0.1px;
       transition: background 0.2s ease, color 0.2s ease;
     }
 
     a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
     /* Visible keyboard focus everywhere */
     a:focus-visible, button:focus-visible {
@@ -72,23 +73,25 @@
       top: 0;
       z-index: 100;
       height: var(--nav-height);
-      background: var(--bg);
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 24px;
+      padding: 0 32px;
     }
 
     .nav-brand {
       font-weight: 700;
       font-size: 17px;
       color: var(--text);
-      letter-spacing: -0.2px;
+      letter-spacing: -0.3px;
+      font-family: 'Source Serif 4', serif;
       cursor: pointer;
       background: none;
       border: none;
-      font-family: inherit;
     }
 
     .nav-links {
@@ -102,12 +105,13 @@
       border: none;
       cursor: pointer;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--text-muted);
-      padding: 6px 10px;
+      padding: 6px 12px;
       border-radius: 4px;
       transition: color 0.15s;
       font-weight: 500;
+      letter-spacing: 0.1px;
       text-decoration: none;
       display: inline-block;
       position: relative;
@@ -123,10 +127,10 @@
     .nav-btn.active::after {
       content: "";
       position: absolute;
-      left: 10px;
-      right: 10px;
+      left: 12px;
+      right: 12px;
       bottom: -2px;
-      height: 2px;
+      height: 1.5px;
       background: var(--primary);
       border-radius: 2px;
     }
@@ -159,61 +163,80 @@
 
     /* ── PAGE LAYOUT ── */
     .page-wrap {
-      max-width: 1100px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 40px 24px 60px;
+      padding: 64px 32px 80px;
     }
 
     /* ── HOME: two-column hero ── */
     .hero {
       display: grid;
       grid-template-columns: var(--sidebar-width) 1fr;
-      gap: 48px;
+      gap: 56px;
       align-items: start;
-      padding-bottom: 48px;
+      padding-bottom: 64px;
     }
 
     .hero-left { text-align: center; }
 
     .profile-pic {
-      width: 180px;
-      height: 180px;
+      width: 176px;
+      height: 176px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      margin: 0 auto 16px;
-      border: 3px solid var(--bg-alt);
+      margin: 0 auto 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
     }
 
-    .hero-name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
-    .hero-role { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; }
-    .hero-institute a { font-size: 14px; color: var(--primary); }
+    .hero-name { font-size: 23px; font-weight: 700; font-family: 'Source Serif 4', serif; letter-spacing: -0.2px; margin-bottom: 6px; }
+    .hero-role { font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px; letter-spacing: 0.2px; }
+    .hero-institute a { font-size: 13.5px; color: var(--primary); }
 
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 9px;
-      margin-top: 16px;
+      gap: 8px;
+      margin-top: 18px;
       flex-wrap: nowrap;
     }
 
     .social-links a {
-      font-size: 20px;
-      color: var(--primary);
-      transition: color 0.15s, transform 0.15s;
-      width: 36px;
-      height: 36px;
+      font-size: 17px;
+      color: var(--text-muted);
+      transition: color 0.15s, border-color 0.15s;
+      width: 34px;
+      height: 34px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      background: transparent;
       flex-shrink: 0;
     }
 
-    .social-links a:hover { color: var(--bg); background: var(--primary); transform: translateY(-2px); text-decoration: none; }
+    .social-links a:hover { color: var(--primary); border-color: var(--primary); text-decoration: none; }
 
-    .hero-right p { text-align: justify; margin-bottom: 16px; color: var(--text); }
+    .hero-right p { text-align: justify; margin-bottom: 18px; color: var(--text); }
+    .research-agenda {
+      font-size: 19px;
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.5;
+      border-left: 2px solid var(--primary);
+      padding-left: 20px;
+      margin-bottom: 28px !important;
+    }
+    [data-theme="dark"] .research-agenda { color: var(--text); }
+
+    .research-item { margin-bottom: 22px; }
+    .research-item:last-child { margin-bottom: 0; }
+    .research-item h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .research-item p { font-size: 14px; color: var(--text-muted); text-align: justify; }
 
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
     .two-col h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--text); }
@@ -228,26 +251,45 @@
     /* ── SECTION BANDS ── */
     .section { display: none; }
     .section.active { display: block; }
-    .band { padding: 48px 0; }
-    .band-alt { background: var(--bg-alt); margin-left: -24px; margin-right: -24px; padding: 48px 24px; }
+    .band { padding: 64px 0; }
+    .band-alt { background: var(--bg-alt); margin-left: -32px; margin-right: -32px; padding: 64px 32px; }
 
-    .section-layout { display: grid; grid-template-columns: var(--sidebar-width) 1fr; gap: 48px; align-items: start; }
-    .section-label h2 { font-size: 34px; font-weight: 400; color: var(--navy); line-height: 1.2; font-family: 'Source Serif 4', serif; }
-    .section-label .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); margin-bottom: 6px; display: block; }
+    .section-layout { display: grid; grid-template-columns: var(--sidebar-width) 1fr; gap: 56px; align-items: start; }
+    .section-label h2 { font-size: 38px; font-weight: 400; color: var(--navy); line-height: 1.15; letter-spacing: -0.4px; font-family: 'Source Serif 4', serif; }
+    [data-theme="dark"] .section-label h2 { color: var(--text); }
+    .section-label .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; display: block; }
 
-    .see-all-btn { background: none; border: none; cursor: pointer; color: var(--primary); font-family: inherit; font-size: 13px; font-weight: 600; letter-spacing: .5px; padding: 0; margin-top: 8px; display: inline-block; text-decoration: none; }
-    .see-all-btn:hover { text-decoration: underline; }
+    .see-all-btn { background: none; border: none; cursor: pointer; color: var(--primary); font-family: inherit; font-size: 12.5px; font-weight: 600; letter-spacing: .5px; padding: 0; margin-top: 12px; display: inline-block; text-decoration: none; }
+    .see-all-btn:hover { text-decoration: underline; text-underline-offset: 3px; }
 
     /* ── PUBLICATIONS ── */
-    .pub-item { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    .pub-item { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
     .pub-item:last-child { border-bottom: none; margin-bottom: 0; }
-    .pub-meta { font-size: 13.5px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
-    .pub-meta i { font-size: 12px; }
-    .pub-title-link { font-size: 15px; font-weight: 600; color: var(--primary); font-family: 'Source Serif 4', serif; font-style: italic; line-height: 1.4; display: block; margin-bottom: 4px; }
-    .pub-venue { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; font-style: italic; }
-    .pub-badges { display: flex; gap: 6px; flex-wrap: wrap; }
-    .badge { font-size: 12px; border: 1px solid var(--border); border-radius: 3px; padding: 2px 9px; color: var(--text-muted); cursor: pointer; transition: background 0.15s; text-decoration: none; }
-    .badge:hover { background: var(--bg-alt); text-decoration: none; }
+    .pub-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .pub-meta i { font-size: 11px; }
+    .pub-title-link { font-size: 15.5px; font-weight: 600; color: var(--text); font-family: 'Source Serif 4', serif; line-height: 1.45; display: block; margin-bottom: 6px; transition: color 0.15s; }
+    .pub-title-link:hover { color: var(--primary); }
+    .pub-venue { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; font-style: italic; }
+    .pub-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge { font-size: 11.5px; border: 1px solid var(--border); border-radius: 20px; padding: 3px 12px; color: var(--text-muted); cursor: pointer; transition: border-color 0.15s, color 0.15s; text-decoration: none; }
+    .badge:hover { border-color: var(--primary); color: var(--primary); text-decoration: none; }
+
+    /* Publications as homepage centerpiece: larger heading, prominent Scholar badge, bigger titles */
+    .pub-centerpiece .section-label h2 { font-size: 42px; }
+    .pub-centerpiece .pub-title-link { font-size: 18px; }
+    .scholar-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--primary);
+      border-color: var(--primary);
+      cursor: pointer;
+      border-radius: 20px;
+    }
+    .scholar-badge:hover { background: var(--primary); color: var(--bg); text-decoration: none; }
 
     /* ── PROJECTS: card grid (was a plain list — now visually distinct) ── */
     .project-grid {
@@ -258,26 +300,25 @@
     .project-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: var(--shadow);
+      border-radius: 8px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
-      transition: transform 0.15s, box-shadow 0.15s;
+      transition: border-color 0.15s;
     }
-    .project-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(30, 64, 175, 0.15); }
+    .project-card:hover { border-color: var(--primary); }
     .project-card .card-icon {
-      width: 38px; height: 38px;
-      border-radius: 8px;
+      width: 36px; height: 36px;
+      border-radius: 6px;
       background: var(--bg-alt);
       color: var(--primary);
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
-      margin-bottom: 14px;
+      font-size: 15px;
+      margin-bottom: 16px;
     }
     .project-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-    .project-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 12px; flex-grow: 1; }
-    .tech-tag { display: inline-block; font-size: 11.5px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 3px; padding: 2px 8px; margin-right: 4px; margin-bottom: 4px; color: var(--text-muted); }
+    .project-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 14px; flex-grow: 1; }
+    .tech-tag { display: inline-block; font-size: 11px; background: transparent; border: 1px solid var(--border); border-radius: 20px; padding: 2px 10px; margin-right: 4px; margin-bottom: 4px; color: var(--text-muted); }
     .project-card .card-link { font-size: 13px; margin-top: auto; }
 
     /* ── EXPERIENCE: vertical timeline (was a flat repeated band pattern) ── */
@@ -294,45 +335,45 @@
     .timeline-dot {
       position: absolute;
       left: -28px; top: 3px;
-      width: 14px; height: 14px;
+      width: 11px; height: 11px;
       border-radius: 50%;
       background: var(--bg);
-      border: 3px solid var(--primary);
+      border: 2px solid var(--primary);
     }
     .timeline-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
     .timeline-item p { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
     .timeline-item .role-tag {
       display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: .6px;
       text-transform: uppercase;
-      color: var(--primary);
-      background: var(--bg-alt);
-      padding: 2px 8px;
-      border-radius: 10px;
-      margin-bottom: 6px;
+      color: var(--text-muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 2px 9px;
+      border-radius: 20px;
+      margin-bottom: 8px;
     }
 
     /* ── AWARDS: horizontal-ish card row (distinct from timeline & pub list) ── */
-    .award-list { display: flex; flex-direction: column; gap: 4px; }
+    .award-list { display: flex; flex-direction: column; }
     .award-item {
       display: flex;
-      gap: 16px;
+      gap: 18px;
       align-items: flex-start;
-      padding: 18px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-      transition: background 0.15s, border-color 0.15s;
+      padding: 20px 4px;
+      border-bottom: 1px solid var(--border);
     }
-    .award-item:hover { background: var(--bg-alt); border-color: var(--border); }
+    .award-item:last-child { border-bottom: none; }
     .award-icon-wrap {
-      width: 40px; height: 40px;
+      width: 36px; height: 36px;
       border-radius: 50%;
-      background: var(--bg-alt);
+      background: transparent;
+      border: 1px solid var(--border);
       color: var(--accent);
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
+      font-size: 14px;
       flex-shrink: 0;
     }
     .award-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
@@ -343,10 +384,12 @@
     .contact-item i { font-size: 20px; color: var(--primary); width: 24px; text-align: center; }
 
     /* ── FOOTER ── */
-    footer { text-align: center; padding: 28px 24px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+    footer { text-align: center; padding: 40px 24px; font-size: 12.5px; color: var(--text-muted); border-top: 1px solid var(--border); letter-spacing: 0.2px; }
 
     /* ── MOBILE ── */
     @media (max-width: 760px) {
+      .page-wrap { padding: 40px 24px 60px; }
+      .section-label h2 { font-size: 30px; }
       .menu-toggle { display: block; }
       .nav-links {
         display: none;
@@ -365,8 +408,8 @@
       .nav-btn.active::after { display: none; }
       .theme-toggle { margin-left: 0; margin-top: 8px; }
       .hero, .section-layout, .two-col { grid-template-columns: 1fr; }
-      .hero-left { margin-bottom: 16px; }
-      .band-alt { margin-left: -24px; margin-right: -24px; }
+      .hero-left { margin-bottom: 24px; }
+      .band-alt { margin-left: -24px; margin-right: -24px; padding: 48px 24px; }
       .project-grid { grid-template-columns: 1fr 1fr; }
     }
 
@@ -424,28 +467,29 @@
       </div>
 
       <div class="hero-right">
-        <p>
-          I am a CSE undergraduate at <strong>RUET (Rajshahi University of Engineering &amp; Technology)</strong>, Bangladesh,
-          with research interests in <strong>Computer Vision, Medical Image Analysis, Healthcare AI, Federated Learning,</strong>
-          and <strong>Trustworthy &amp; Explainable AI</strong>. I have authored IEEE conference papers in medical imaging,
-          natural language processing, and satellite image segmentation. My long-term goal is to pursue a Ph.D. and develop
-          trustworthy, privacy-preserving AI systems that address real-world challenges in healthcare.
+        <p class="research-agenda">
+          I want to build diagnostic AI systems that work reliably when labeled medical data is scarce —
+          combining <strong>semi-supervised learning</strong>, <strong>explainability</strong>, and
+          <strong>computational efficiency</strong> to make deep learning trustworthy enough for real clinical use.
         </p>
         <p>
-          My current research focuses on <strong>semi-supervised learning for retinal OCT image classification</strong>,
-          where I develop efficient attention-based deep learning models to improve diagnostic performance while reducing
-          the need for large-scale annotated medical datasets.
+          I am a CSE undergraduate at <strong>RUET (Rajshahi University of Engineering &amp; Technology)</strong>, Bangladesh.
+          My current work centers on <strong>semi-supervised learning for retinal OCT image classification</strong>,
+          where I develop attention-based models that reduce dependence on large annotated datasets. This sits alongside
+          two other threads from my published work: an <strong>explainable multi-scale CNN framework</strong> for
+          Alzheimer's diagnosis from MRI, and a <strong>memory-efficient segmentation study</strong> for
+          resource-constrained deployment. Together these reflect the direction I want a PhD to sharpen: models that are
+          not just accurate, but data-efficient, interpretable, and deployable in real healthcare settings.
         </p>
 
         <div class="two-col">
           <div>
-            <h3>Interests</h3>
+            <h3>Research Interests</h3>
             <ul>
-              <li>Computer Vision</li>
-              <li>Medical Image Analysis</li>
-              <li>Healthcare AI</li>
-              <li>Federated Learning</li>
-              <li>Trustworthy &amp; Explainable AI</li>
+              <li><strong>Computer Vision</strong> — medical image analysis under label scarcity</li>
+              <li><strong>Healthcare AI</strong> — diagnostic models robust enough for clinical deployment</li>
+              <li><strong>Trustworthy &amp; Explainable AI</strong> — interpretability as a precondition for clinical trust, not an afterthought</li>
+              <li><strong>Federated Learning</strong> — privacy-preserving training across institutions without centralizing patient data</li>
             </ul>
           </div>
           <div>
@@ -462,12 +506,15 @@
       </div>
     </div>
 
-    <!-- Recent Publications band -->
-    <div class="band-alt">
+    <!-- Recent Publications band (centerpiece) -->
+    <div class="band-alt pub-centerpiece">
       <div class="section-layout">
         <div class="section-label">
           <span class="eyebrow">Research output</span>
-          <h2>Recent Publications</h2>
+          <h2>Publications</h2>
+          <a class="badge scholar-badge" href="https://scholar.google.com/citations?user=dnLo7VQAAAAJ" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-google-scholar" aria-hidden="true"></i> Google Scholar
+          </a>
           <a class="see-all-btn" href="#publications">SEE ALL PUBLICATIONS ›</a>
         </div>
         <div>
