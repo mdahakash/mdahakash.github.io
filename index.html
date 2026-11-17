@@ -2,978 +2,2187 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Md Ashraful Hossen Akash</title>
+  <title>Md Ashraful Hossen Akash | Medical AI &amp; Computer Vision Researcher</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic Portfolio of Md Ashraful Hossen Akash — Prospective PhD applicant in Computer Science focusing on Medical Image Analysis, Trustworthy AI, and Semi-Supervised Learning.">
+  <meta name="keywords" content="Md Ashraful Hossen Akash, PhD Applicant, Medical Imaging, Computer Vision, Semi-Supervised Learning, Trustworthy AI, RUET, Deep Learning">
+  <meta name="author" content="Md Ashraful Hossen Akash">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Md Ashraful Hossen Akash | Medical AI &amp; Computer Vision Researcher">
+  <meta property="og:description" content="Research in Medical Image Analysis, Trustworthy AI, and Semi-Supervised Deep Learning.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700&amp;family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
-    /* ══════════════════════ TOKENS ══════════════════════ */
+    /* ══════════════════════ COLOR DESIGN SYSTEM ══════════════════════ */
     :root {
-      /* Light mode (default) — Professional Academic/Medical Blue */
-      --primary: #1e40af;       /* Deep trustworthy blue */
-      --primary-light: #2563eb; /* Brighter blue for hover/links */
-      --accent: #d97706;        /* Warm amber/gold for contrast */
-      --navy: #0f172a;          /* Very dark slate-blue */
-      --text: #1e293b;          /* Dark slate text */
-      --text-muted: #64748b;    /* Muted slate text */
-      --bg: #f8fafc;            /* Clean off-white */
-      --bg-alt: #f1f5f9;        /* Light gray-blue background */
-      --border: #cbd5e1;        /* Soft slate border */
-      --card-bg: #ffffff;
-      --nav-height: 56px;
-      --sidebar-width: 270px;
-      --shadow: 0 1px 3px rgba(30, 64, 175, 0.08);
+      --primary: #004bb9;         /* Exact Classic Academic Blue (RGB: 0, 75, 185) */
+      --primary-hover: #003a8f;
+      --primary-light: #edf3fc;   /* Soft elegant academic blue tint */
+      --primary-border: #b8d2f2;
+      --accent: #b45309;          /* Deep warm amber */
+      --accent-light: #fef3c7;
+      --navy: #0f172a;            /* Rich slate black */
+      --text: #1e293b;            /* Dark slate */
+      --text-muted: #64748b;      /* Balanced secondary text */
+      --text-light: #94a3b8;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;          /* Soft cool off-white */
+      --bg-card: #ffffff;
+      --border: #e2e8f0;          /* Subtle clean border */
+      --border-focus: #004bb9;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --radius: 8px;
+      --radius-sm: 5px;
+      --radius-full: 9999px;
+      --nav-height: 64px;
+      --max-width: 1060px;
     }
 
     [data-theme="dark"] {
-      --primary: #60a5fa;       /* Soft bright blue for dark mode */
-      --primary-light: #93c5fd;
-      --accent: #f59e0b;        /* Bright amber/gold */
+      --primary: #4d8df0;         /* Glowing classic academic blue for dark mode */
+      --primary-hover: #7baef7;
+      --primary-light: rgba(77, 141, 240, 0.14);
+      --primary-border: #1e3a8a;
+      --accent: #f59e0b;
+      --accent-light: rgba(245, 158, 11, 0.15);
       --navy: #f8fafc;
       --text: #f1f5f9;
       --text-muted: #94a3b8;
-      --bg: #0f172a;            /* Deep slate background */
-      --bg-alt: #1e293b;        /* Lighter slate for cards/sections */
-      --border: #334155;
-      --card-bg: #1e293b;
-      --shadow: 0 1px 3px rgba(0,0,0,0.4);
+      --text-light: #64748b;
+      --bg: #0b0f17;              /* Deep elegant dark background */
+      --bg-alt: #131b2a;          /* Surface elevation */
+      --bg-card: #172033;
+      --border: #1e293b;
+      --border-focus: #4d8df0;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
     }
 
+    /* ══════════════════════ BASE RESET ══════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: auto; }
-    :target { scroll-margin-top: 0; }
-
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
     body {
-      font-family: 'Merriweather Sans', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--text);
       background: var(--bg);
-      font-size: 15.5px;
-      line-height: 1.75;
-      letter-spacing: 0.1px;
-      transition: background 0.2s ease, color 0.2s ease;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      transition: background 0.25s ease, color 0.25s ease;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; text-underline-offset: 3px; }
-
-    /* Visible keyboard focus everywhere */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
-      border-radius: 3px;
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.15s ease, opacity 0.15s ease;
+    }
+    a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; animation: none !important; }
+    h1, h2, h3, h4 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
     }
 
-    /* ── NAVBAR ── */
-    .top-nav {
+    /* ══════════════════════ NAVIGATION ══════════════════════ */
+    .header-nav {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
       height: var(--nav-height);
-      background: color-mix(in srgb, var(--bg) 92%, transparent);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 32px;
+      padding: 0 24px;
+    }
+    .brand-link {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.18rem;
+      color: var(--navy);
+      text-decoration: none !important;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-link:hover { color: var(--primary); }
+    .brand-status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
     }
 
-    .nav-brand {
-      font-weight: 700;
-      font-size: 17px;
-      color: var(--text);
-      letter-spacing: -0.3px;
-      font-family: 'Source Serif 4', serif;
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: color 0.15s ease, background 0.15s ease;
+      text-decoration: none !important;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+    .nav-cv-btn {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--primary) !important;
+      border: 1px solid var(--primary-border);
+      background: var(--primary-light);
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 6px;
+      transition: all 0.15s ease;
+    }
+    .nav-cv-btn:hover {
+      background: var(--primary);
+      color: #ffffff !important;
+      border-color: var(--primary);
+      text-decoration: none !important;
+    }
+
+    .theme-toggle-btn {
+      background: none;
+      border: 1px solid var(--border);
       cursor: pointer;
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 6px;
+      font-size: 0.95rem;
+      transition: all 0.15s ease;
+    }
+    .theme-toggle-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    .mobile-menu-btn {
+      display: none;
       background: none;
       border: none;
+      font-size: 1.25rem;
+      color: var(--text);
+      cursor: pointer;
     }
 
-    .nav-links {
+    /* ══════════════════════ MAIN WRAPPER ══════════════════════ */
+    .page-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ══════════════════════ HERO SECTION ══════════════════════ */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 56px;
+    }
+
+    /* Sidebar Column */
+    .profile-card {
+      text-align: center;
+      position: sticky;
+      top: calc(var(--nav-height) + 24px);
+    }
+    .profile-img-container {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 20px;
+    }
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--border);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .profile-img:hover {
+      transform: scale(1.02);
+      border-color: var(--primary);
+    }
+    .author-name {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .author-title {
+      font-size: 0.88rem;
+      color: var(--primary);
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .author-affiliation {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+    .author-affiliation a {
+      color: var(--text-muted);
+    }
+    .author-affiliation a:hover {
+      color: var(--primary);
+    }
+
+    /* Social Action Pills */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .social-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      transition: all 0.15s ease;
+      background: var(--bg-card);
+    }
+    .social-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .hero-cv-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 10px 16px;
+      background: var(--primary);
+      color: #ffffff !important;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      text-decoration: none !important;
+    }
+    .hero-cv-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Bio / Research Pitch Column */
+    .hero-bio {
+      padding-top: 4px;
+    }
+    .phd-applicant-banner {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 0.94rem;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+    .phd-applicant-banner strong {
+      color: var(--primary);
+    }
+    .bio-lead {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.16rem;
+      line-height: 1.65;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .bio-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    /* Research Pillars Grid */
+    .research-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 26px;
+    }
+    .pillar-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .pillar-card:hover {
+      border-color: var(--primary-border);
+      transform: translateY(-2px);
+    }
+    .pillar-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pillar-title i {
+      color: var(--primary);
+      font-size: 0.88rem;
+    }
+    .pillar-desc {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ══════════════════════ SECTION BASE ══════════════════════ */
+    .content-section {
+      padding: 56px 0 20px;
+      border-top: 1px solid var(--border);
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .section-eyebrow {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .section-title {
+      font-size: 1.85rem;
+      color: var(--navy);
+    }
+    .section-subtext {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ══════════════════════ NEWS SECTION ══════════════════════ */
+    .news-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .news-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      align-items: baseline;
+      gap: 20px;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 0.91rem;
+    }
+    .news-item:last-child {
+      border-bottom: none;
+    }
+    .news-date {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      white-space: nowrap;
+    }
+    .news-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      margin-right: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: inline-block;
+    }
+    .tag-paper { background: var(--primary-light); color: var(--primary); }
+    .tag-position { background: #dcfce7; color: #15803d; }
+    .tag-award { background: var(--accent-light); color: var(--accent); }
+    [data-theme="dark"] .tag-position { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
+
+    /* ══════════════════════ PUBLICATIONS SECTION ══════════════════════ */
+    .pub-filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .pub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+    .pub-card:hover {
+      border-color: var(--primary-border);
+      box-shadow: var(--shadow-sm);
+    }
+    .pub-card.featured {
+      border-left: 4px solid var(--primary);
+    }
+    .pub-layout-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+    .pub-teaser-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-in;
+      transition: all 0.2s ease;
+    }
+    .pub-teaser-box:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+    .pub-teaser-img {
+      width: 100%;
+      height: 125px;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 3px;
+      display: block;
+    }
+    .pub-teaser-label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
       display: flex;
       align-items: center;
       gap: 4px;
     }
-
-    .nav-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 13.5px;
-      color: var(--text-muted);
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: color 0.15s;
-      font-weight: 500;
-      letter-spacing: 0.1px;
-      text-decoration: none;
-      display: inline-block;
-      position: relative;
-    }
-
-    .nav-btn:hover { color: var(--primary); text-decoration: none; }
-
-    /* Active state: not just color — underline bar so it doesn't rely on color alone */
-    .nav-btn.active {
-      font-weight: 700;
+    .pub-teaser-label i {
+      font-size: 0.65rem;
       color: var(--primary);
     }
-    .nav-btn.active::after {
-      content: "";
-      position: absolute;
-      left: 12px;
-      right: 12px;
-      bottom: -2px;
-      height: 1.5px;
-      background: var(--primary);
-      border-radius: 2px;
+    .pub-content-box {
+      min-width: 0;
     }
 
-    .theme-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 17px;
-      color: var(--text-muted);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      margin-left: 8px;
-      transition: color 0.15s, background 0.15s;
-    }
-    .theme-toggle:hover { color: var(--primary); background: var(--bg-alt); }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    /* ── PAGE LAYOUT ── */
-    .page-wrap {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 64px 32px 80px;
-    }
-
-    /* ── HOME: two-column hero ── */
-    .hero {
-      display: grid;
-      grid-template-columns: var(--sidebar-width) 1fr;
-      gap: 56px;
-      align-items: start;
-      padding-bottom: 64px;
-    }
-
-    .hero-left { text-align: center; }
-
-    .profile-pic {
-      width: 176px;
-      height: 176px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 20px;
+    /* Project Teaser */
+    .project-teaser-box {
+      background: #ffffff;
       border: 1px solid var(--border);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-    }
-
-    .hero-name { font-size: 23px; font-weight: 700; font-family: 'Source Serif 4', serif; letter-spacing: -0.2px; margin-bottom: 6px; }
-    .hero-role { font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px; letter-spacing: 0.2px; }
-    .hero-institute a { font-size: 13.5px; color: var(--primary); }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 18px;
-      flex-wrap: nowrap;
-    }
-
-    .social-links a {
-      font-size: 17px;
-      color: var(--text-muted);
-      transition: color 0.15s, border-color 0.15s;
-      width: 34px;
-      height: 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: transparent;
-      flex-shrink: 0;
-    }
-
-    .social-links a:hover { color: var(--primary); border-color: var(--primary); text-decoration: none; }
-
-    .hero-right p { text-align: justify; margin-bottom: 18px; color: var(--text); }
-    .research-agenda {
-      font-size: 19px;
-      font-family: 'Source Serif 4', serif;
-      font-style: italic;
-      font-weight: 400;
-      color: var(--navy);
-      line-height: 1.5;
-      border-left: 2px solid var(--primary);
-      padding-left: 20px;
-      margin-bottom: 28px !important;
-    }
-    [data-theme="dark"] .research-agenda { color: var(--text); }
-
-    .research-item { margin-bottom: 22px; }
-    .research-item:last-child { margin-bottom: 0; }
-    .research-item h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .research-item p { font-size: 14px; color: var(--text-muted); text-align: justify; }
-
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
-    .two-col h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--text); }
-    .two-col ul { list-style: disc; padding-left: 20px; }
-    .two-col ul li { margin-bottom: 6px; font-size: 14px; color: var(--text); }
-
-    .edu-entry { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
-    .edu-entry i { color: var(--primary); margin-top: 3px; font-size: 14px; flex-shrink: 0; }
-    .edu-entry-text strong { display: block; font-size: 14px; font-weight: 600; }
-    .edu-entry-text span { font-size: 13px; color: var(--text-muted); }
-
-    /* ── SECTION BANDS ── */
-    .section { display: none; }
-    .section.active { display: block; }
-    .band { padding: 64px 0; }
-    .band-alt { background: var(--bg-alt); margin-left: -32px; margin-right: -32px; padding: 64px 32px; }
-
-    .section-layout { display: grid; grid-template-columns: var(--sidebar-width) 1fr; gap: 56px; align-items: start; }
-    .section-label h2 { font-size: 38px; font-weight: 400; color: var(--navy); line-height: 1.15; letter-spacing: -0.4px; font-family: 'Source Serif 4', serif; }
-    [data-theme="dark"] .section-label h2 { color: var(--text); }
-    .section-label .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; display: block; }
-
-    .see-all-btn { background: none; border: none; cursor: pointer; color: var(--primary); font-family: inherit; font-size: 12.5px; font-weight: 600; letter-spacing: .5px; padding: 0; margin-top: 12px; display: inline-block; text-decoration: none; }
-    .see-all-btn:hover { text-decoration: underline; text-underline-offset: 3px; }
-
-    /* ── PUBLICATIONS ── */
-    .pub-item { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
-    .pub-item:last-child { border-bottom: none; margin-bottom: 0; }
-    .pub-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
-    .pub-meta i { font-size: 11px; }
-    .pub-title-link { font-size: 15.5px; font-weight: 600; color: var(--text); font-family: 'Source Serif 4', serif; line-height: 1.45; display: block; margin-bottom: 6px; transition: color 0.15s; }
-    .pub-title-link:hover { color: var(--primary); }
-    .pub-venue { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; font-style: italic; }
-    .pub-badges { display: flex; gap: 8px; flex-wrap: wrap; }
-    .badge { font-size: 11.5px; border: 1px solid var(--border); border-radius: 20px; padding: 3px 12px; color: var(--text-muted); cursor: pointer; transition: border-color 0.15s, color 0.15s; text-decoration: none; }
-    .badge:hover { border-color: var(--primary); color: var(--primary); text-decoration: none; }
-
-    /* Publications as homepage centerpiece: larger heading, prominent Scholar badge, bigger titles */
-    .pub-centerpiece .section-label h2 { font-size: 42px; }
-    .pub-centerpiece .pub-title-link { font-size: 18px; }
-    .scholar-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 12px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--primary);
-      border-color: var(--primary);
-      cursor: pointer;
-      border-radius: 20px;
-    }
-    .scholar-badge:hover { background: var(--primary); color: var(--bg); text-decoration: none; }
-
-    /* ── PROJECTS: card grid (was a plain list — now visually distinct) ── */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 20px;
-    }
-    .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 22px;
+      border-radius: var(--radius-sm);
+      padding: 6px;
+      margin-bottom: 14px;
+      cursor: zoom-in;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.15s;
+      align-items: center;
+      transition: all 0.2s ease;
     }
-    .project-card:hover { border-color: var(--primary); }
-    .project-card .card-icon {
-      width: 36px; height: 36px;
-      border-radius: 6px;
-      background: var(--bg-alt);
+    .project-teaser-box:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .project-teaser-img {
+      width: 100%;
+      height: 135px;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+    .lightbox-modal.active {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 85vh;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      object-fit: contain;
+      cursor: default;
+    }
+    .lightbox-caption {
+      position: absolute;
+      bottom: 24px;
+      color: #ffffff;
+      font-size: 0.84rem;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .pub-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .pub-venue-badge {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .venue-under-review {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+    .venue-published {
+      background: var(--primary-light);
       color: var(--primary);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px;
+      border: 1px solid var(--primary-border);
+    }
+    [data-theme="dark"] .venue-under-review {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+    [data-theme="dark"] .venue-published {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary-border);
+    }
+
+    .pub-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .pub-title a {
+      color: inherit;
+    }
+    .pub-title a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .pub-authors {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .pub-authors strong {
+      color: var(--navy);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .pub-venue-text {
+      font-size: 0.86rem;
+      color: var(--text);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .pub-tldr {
+      background: var(--bg-alt);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.84rem;
+      color: var(--text);
+      line-height: 1.55;
+      margin-bottom: 14px;
+      border-left: 3px solid var(--border);
+    }
+    .pub-tldr strong {
+      color: var(--primary);
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+
+    /* Publication Action Pills */
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .pub-link-btn {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      text-decoration: none !important;
+    }
+    .pub-link-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    .pub-link-btn.primary-action {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary-border);
+    }
+    .pub-link-btn.primary-action:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* BibTeX Card */
+    .bibtex-drawer {
+      display: none;
+      margin-top: 14px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      position: relative;
+    }
+    .bibtex-drawer.open {
+      display: block;
+    }
+    .bibtex-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .copy-bib-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 0.72rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+    .copy-bib-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* ══════════════════════ RESEARCH PROJECTS SECTION ══════════════════════ */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 22px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project-card:hover {
+      border-color: var(--primary-border);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .project-icon-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 16px;
     }
-    .project-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-    .project-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 14px; flex-grow: 1; }
-    .tech-tag { display: inline-block; font-size: 11px; background: transparent; border: 1px solid var(--border); border-radius: 20px; padding: 2px 10px; margin-right: 4px; margin-bottom: 4px; color: var(--text-muted); }
-    .project-card .card-link { font-size: 13px; margin-top: auto; }
+    .project-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-light);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .project-card h3 {
+      font-size: 1.12rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .project-card p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .tech-pill {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .project-card-footer {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 0.84rem;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+    .project-card-footer a {
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
 
-    /* ── EXPERIENCE: vertical timeline (was a flat repeated band pattern) ── */
-    .timeline { position: relative; padding-left: 28px; }
-    .timeline::before {
+    /* ══════════════════════ RESEARCH & LAB EXPERIENCE ══════════════════════ */
+    .timeline-container {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline-container::before {
       content: "";
       position: absolute;
-      left: 6px; top: 4px; bottom: 4px;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
       width: 2px;
       background: var(--border);
     }
-    .timeline-item { position: relative; padding-bottom: 28px; }
-    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-entry {
+      position: relative;
+      padding-bottom: 32px;
+    }
+    .timeline-entry:last-child {
+      padding-bottom: 0;
+    }
     .timeline-dot {
       position: absolute;
-      left: -28px; top: 3px;
-      width: 11px; height: 11px;
+      left: -28px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       background: var(--bg);
-      border: 2px solid var(--primary);
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 3px var(--bg);
     }
-    .timeline-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
-    .timeline-item p { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
-    .timeline-item .role-tag {
-      display: inline-block;
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      background: transparent;
+    .entry-layout {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .entry-logo-box {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      max-width: 44px;
+      background: #ffffff;
       border: 1px solid var(--border);
-      padding: 2px 9px;
-      border-radius: 20px;
-      margin-bottom: 8px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .entry-logo-box:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .entry-logo-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .entry-content {
+      flex: 1;
+      min-width: 0;
+    }
+    [data-theme="dark"] .entry-logo-box {
+      background: #ffffff;
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .entry-role {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .entry-date {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .entry-lab {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .entry-advisor {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .entry-body {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .entry-body ul {
+      padding-left: 18px;
+      margin-top: 6px;
+    }
+    .entry-body li {
+      margin-bottom: 4px;
     }
 
-    /* ── AWARDS: horizontal-ish card row (distinct from timeline & pub list) ── */
-    .award-list { display: flex; flex-direction: column; }
-    .award-item {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      padding: 20px 4px;
-      border-bottom: 1px solid var(--border);
+    /* ══════════════════════ HONORS & COMPETITIONS ══════════════════════ */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
     }
-    .award-item:last-child { border-bottom: none; }
-    .award-icon-wrap {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: transparent;
+    .award-card {
+      display: flex;
+      gap: 14px;
+      background: var(--bg-card);
       border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      align-items: flex-start;
+      transition: border-color 0.15s ease;
+    }
+    .award-card:hover {
+      border-color: var(--primary-border);
+    }
+    .award-icon-box {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
       color: var(--accent);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
       flex-shrink: 0;
     }
-    .award-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-    .award-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
-
-    /* ── CONTACT ── */
-    .contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 15px; }
-    .contact-item i { font-size: 20px; color: var(--primary); width: 24px; text-align: center; }
-
-    /* ── FOOTER ── */
-    footer { text-align: center; padding: 40px 24px; font-size: 12.5px; color: var(--text-muted); border-top: 1px solid var(--border); letter-spacing: 0.2px; }
-
-    /* ── MOBILE ── */
-    @media (max-width: 760px) {
-      .page-wrap { padding: 40px 24px 60px; }
-      .section-label h2 { font-size: 30px; }
-      .menu-toggle { display: block; }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        top: var(--nav-height);
-        left: 0; right: 0;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        padding: 8px 16px 16px;
-        z-index: 99;
-        gap: 2px;
-      }
-      .nav-links.show { display: flex; }
-      .nav-btn.active::after { display: none; }
-      .theme-toggle { margin-left: 0; margin-top: 8px; }
-      .hero, .section-layout, .two-col { grid-template-columns: 1fr; }
-      .hero-left { margin-bottom: 24px; }
-      .band-alt { margin-left: -24px; margin-right: -24px; padding: 48px 24px; }
-      .project-grid { grid-template-columns: 1fr 1fr; }
+    .award-body h4 {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .award-body p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
-    @media (max-width: 480px) {
-      .project-grid { grid-template-columns: 1fr; }
+    /* ══════════════════════ CONTACT ══════════════════════ */
+    .contact-banner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+    }
+    .contact-banner h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+    .contact-banner p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 20px;
+    }
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #ffffff !important;
+      padding: 10px 22px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      text-decoration: none !important;
+    }
+    .email-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ══════════════════════ FOOTER ══════════════════════ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    footer a {
+      color: var(--text-muted);
+    }
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    /* ══════════════════════ RESPONSIVE BREAKPOINTS ══════════════════════ */
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .profile-card {
+        position: static;
+      }
+      .research-pillars {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px 24px;
+        gap: 8px;
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-menu.show {
+        display: flex;
+      }
+      .nav-cv-btn {
+        margin-left: 0;
+        justify-content: center;
+      }
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .pub-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .pub-teaser-box {
+        max-width: 280px;
+      }
+      .entry-layout {
+        gap: 12px;
+      }
+      .entry-logo-box {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        max-width: 38px;
+        padding: 3px;
+      }
     }
   </style>
 </head>
 <body data-theme="light">
 
-<!-- TOP NAVIGATION -->
-<header class="top-nav">
-  <button class="nav-brand" onclick="navigateTo('home')" aria-label="Go to home section">Ashraful</button>
+  <!-- ══════════════════════ NAVIGATION ══════════════════════ -->
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="#about" class="brand-link">
+        Md Ashraful Hossen Akash
+      </a>
 
-  <nav class="nav-links" id="mobileMenu" aria-label="Section navigation">
-    <a class="nav-btn active" data-target="home" href="#home" aria-current="page">Home</a>
-    <a class="nav-btn" data-target="publications" href="#publications">Publications</a>
-    <a class="nav-btn" data-target="projects" href="#projects">Projects</a>
-    <a class="nav-btn" data-target="experience" href="#experience">Experience</a>
-    <a class="nav-btn" data-target="awards" href="#awards">Awards</a>
-    <a href="assets/CV_Ashraful.pdf" class="nav-btn" target="_blank" rel="noopener noreferrer">CV</a>
-    <button class="theme-toggle" id="themeToggleBtn" aria-label="Switch to dark mode" aria-pressed="false">
-      <i class="fa-solid fa-moon" id="themeIcon" aria-hidden="true"></i>
-    </button>
-  </nav>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link active">About</a></li>
+          <li><a href="#news" class="nav-link">News</a></li>
+          <li><a href="#publications" class="nav-link">Publications</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#awards" class="nav-link">Awards</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li>
+            <a href="assets/CV_Ashraful.pdf" target="_blank" rel="noopener noreferrer" class="nav-cv-btn">
+              <i class="fa-regular fa-file-pdf"></i> CV [PDF]
+            </a>
+          </li>
+          <li>
+            <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle Theme">
+              <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
 
-  <button class="menu-toggle" id="menuToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
-    <i class="fa-solid fa-bars" aria-hidden="true"></i>
-  </button>
-</header>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
-<!-- PAGE CONTENT (Wrapped in <main> for accessibility compliance) -->
-<main class="page-wrap">
+  <!-- ══════════════════════ MAIN CONTENT ══════════════════════ -->
+  <main class="page-container">
 
-  <!-- ══ HOME ══ -->
-  <div id="home" data-section="home" class="section active">
-    <div class="hero">
-
-      <div class="hero-left">
-        <img src="assets/profile.jpg" alt="Portrait of Md Ashraful Hossen Akash" class="profile-pic">
-        <div class="hero-name">Md Ashraful Hossen Akash</div>
-        <div class="hero-role">CSE Undergraduate<br>Computer Vision &amp; Healthcare AI Researcher</div>
-        <div class="hero-institute">
-          <a href="https://www.ruet.ac.bd" target="_blank" rel="noopener noreferrer">Rajshahi University of Engineering &amp; Technology</a>
+    <!-- ══ ABOUT & HERO ══ -->
+    <section id="about" class="hero-grid">
+      <!-- Left Profile Column -->
+      <aside class="profile-card">
+        <div class="profile-img-container">
+          <img src="assets/profile.jpg" alt="Portrait of Md Ashraful Hossen Akash" class="profile-img">
+        </div>
+        <h1 class="author-name">Md Ashraful Hossen Akash</h1>
+        <div class="author-title">
+          Medical AI &amp; Computer Vision Researcher
+        </div>
+        <div class="author-affiliation">
+          B.Sc. in CSE (1st Class, RUET)<br>
+          <a href="https://www.ruet.ac.bd" target="_blank" rel="noopener noreferrer">Rajshahi University of Engineering &amp; Technology (RUET)</a>
         </div>
 
+        <!-- Social / Academic Links -->
         <div class="social-links">
-          <a href="mailto:ashraful.hossen.akash@email.com" aria-label="Send email to Ashraful"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
-          <a href="https://scholar.google.com/citations?user=dnLo7VQAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="View Google Scholar profile"><i class="fa-brands fa-google-scholar" aria-hidden="true"></i></a>
-          <a href="https://github.com/mdahakash" target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-          <a href="https://www.linkedin.com/in/mdahakash" target="_blank" rel="noopener noreferrer" aria-label="View LinkedIn profile"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-          <a href="https://orcid.org/0009-0006-3664-4969" target="_blank" rel="noopener noreferrer" aria-label="View ORCID profile"><i class="fa-brands fa-orcid" aria-hidden="true"></i></a>
-          <a href="https://www.kaggle.com/ashrafulhossenakash" target="_blank" rel="noopener noreferrer" aria-label="View Kaggle profile"><i class="fa-brands fa-kaggle" aria-hidden="true"></i></a>
+          <a href="mailto:ashraful.hossen.akash@gmail.com" class="social-btn" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://scholar.google.com/citations?user=dnLo7VQAAAAJ" target="_blank" rel="noopener noreferrer" class="social-btn" title="Google Scholar" aria-label="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+          <a href="https://github.com/mdahakash" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mdahakash" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://orcid.org/0009-0006-3664-4969" target="_blank" rel="noopener noreferrer" class="social-btn" title="ORCID" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
+          <a href="https://www.kaggle.com/ashrafulhossenakash" target="_blank" rel="noopener noreferrer" class="social-btn" title="Kaggle" aria-label="Kaggle"><i class="fa-brands fa-kaggle"></i></a>
+        </div>
+
+        <a href="assets/CV_Ashraful.pdf" target="_blank" rel="noopener noreferrer" class="hero-cv-btn">
+          <i class="fa-solid fa-download"></i> Download Academic CV
+        </a>
+      </aside>
+
+      <!-- Right Bio & Vision Column -->
+      <article class="hero-bio">
+        <!-- Callout Banner for PhD Admissions -->
+        <div class="phd-applicant-banner">
+          <i class="fa-solid fa-graduation-cap" style="margin-right: 6px;"></i>
+          <strong>Prospective PhD Applicant:</strong> I am actively seeking PhD opportunities in <strong>Computer Science / BME / ECE</strong> for <strong>Fall 2027 / Spring 2028</strong>. My research interests span Medical Image Computing, Semi-Supervised Learning, and Trustworthy &amp; Explainable AI.
+        </div>
+
+        <p class="bio-lead">
+          I build data-efficient and interpretable deep learning systems that can diagnose pathologies reliably when expert medical annotations are sparse.
+        </p>
+
+        <p class="bio-text">
+          I graduated with a <strong>B.Sc. in Computer Science &amp; Engineering (1st Class)</strong> from <strong>Rajshahi University of Engineering &amp; Technology (RUET)</strong>, Bangladesh on August 11, 2026 (CGPA: <strong>3.68</strong> across last 61.75 credits). Currently, I conduct research as a <strong>Research Intern at Elite Research Lab LLC (New York, USA)</strong> focusing on multimodal architectures &amp; federated learning, and as a <strong>Research Assistant at Arché Intelligence Lab</strong> working on 3D neuro-oncological MRI segmentation &amp; grading.
+        </p>
+
+        <p class="bio-text">
+          My primary research centers on <strong>semi-supervised learning under distribution shifts</strong> (such as our <em>TRIAGE</em> framework under review at <em>Scientific Reports</em>), <strong>explainability &amp; anatomical attribution</strong> for multi-site medical images (Chest X-Ray and Brain MRI), and <strong>memory-efficient model architectures</strong> designed for deployment on resource-constrained clinical workstations.
+        </p>
+
+        <!-- 4 Core Pillars -->
+        <div class="research-pillars">
+          <div class="pillar-card">
+            <div class="pillar-title"><i class="fa-solid fa-microscope"></i> Medical Image Analysis</div>
+            <div class="pillar-desc">Risk-controlled pseudo-labeling, retinal OCT classification, and 3D volumetric MRI brain tumor segmentation with SwinUNETR.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-title"><i class="fa-solid fa-shield-halved"></i> Trustworthy &amp; Explainable AI</div>
+            <div class="pillar-desc">Quantifying anatomical attribution and feature stability under cross-institution distribution shift in clinical AI models.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-title"><i class="fa-solid fa-bolt"></i> Efficient &amp; Compact Deep Learning</div>
+            <div class="pillar-desc">Engineering parameter-efficient CNNs and frequency-aware Vision Transformers (RepViT) for low-power edge deployment.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-title"><i class="fa-solid fa-network-wired"></i> Federated Learning in Healthcare</div>
+            <div class="pillar-desc">Multi-institutional collaborative learning frameworks that protect patient privacy without sacrificing model generalization.</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ══ NEWS & UPDATES ══ -->
+    <section id="news" class="content-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">News &amp; Updates</h2>
         </div>
       </div>
 
-      <div class="hero-right">
-        <p class="research-agenda">
-          I want to build diagnostic AI systems that work reliably when labeled medical data is scarce —
-          combining <strong>semi-supervised learning</strong>, <strong>explainability</strong>, and
-          <strong>computational efficiency</strong> to make deep learning trustworthy enough for real clinical use.
-        </p>
-        <p>
-          I am a CSE undergraduate at <strong>RUET (Rajshahi University of Engineering &amp; Technology)</strong>, Bangladesh.
-          My current work centers on <strong>semi-supervised learning for retinal OCT image classification</strong>,
-          where I develop attention-based models that reduce dependence on large annotated datasets. This sits alongside
-          two other threads from my published work: an <strong>explainable multi-scale CNN framework</strong> for
-          Alzheimer's diagnosis from MRI, and a <strong>memory-efficient segmentation study</strong> for
-          resource-constrained deployment. Together these reflect the direction I want a PhD to sharpen: models that are
-          not just accurate, but data-efficient, interpretable, and deployable in real healthcare settings.
-        </p>
-
-        <div class="two-col">
+      <div class="news-timeline">
+        <div class="news-item">
+          <div class="news-date">Nov 2026</div>
           <div>
-            <h3>Research Interests</h3>
-            <ul>
-              <li><strong>Computer Vision</strong> — medical image analysis under label scarcity</li>
-              <li><strong>Healthcare AI</strong> — diagnostic models robust enough for clinical deployment</li>
-              <li><strong>Trustworthy &amp; Explainable AI</strong> — interpretability as a precondition for clinical trust, not an afterthought</li>
-              <li><strong>Federated Learning</strong> — privacy-preserving training across institutions without centralizing patient data</li>
-            </ul>
+            <span class="news-tag tag-paper">Accepted</span>
+            Our paper <strong>"MeLALight: Melanoma Classification Using Multi-Stage DCT-Based Frequency-Channel Attention Fusion on RepViT"</strong> has been accepted at the <strong>7th ICRPSET 2026</strong>!
           </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Nov 2026</div>
           <div>
-            <h3>Education</h3>
-            <div class="edu-entry">
-              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-              <div class="edu-entry-text">
-                <strong>BSc in Computer Science &amp; Engineering</strong>
-                <span>Rajshahi University of Engineering &amp; Technology (RUET)</span>
+            <span class="news-tag tag-position">Promotion</span>
+            Promoted to <strong>Research Intern</strong> at <strong>Elite Research Lab LLC (New York, USA)</strong>, conducting multimodal healthcare AI and federated learning research under Kishor Morol.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Aug 2026</div>
+          <div>
+            <span class="news-tag tag-award">Graduation</span>
+            Graduated with a <strong>B.Sc. in Computer Science &amp; Engineering (1st Class)</strong> from <strong>Rajshahi University of Engineering &amp; Technology (RUET)</strong>.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Aug 2026</div>
+          <div>
+            <span class="news-tag tag-position">Appointment</span>
+            Joined <strong>Elite Research Lab LLC (New York, USA)</strong> as a <em>Student Researcher</em>, conducting research on multimodal healthcare AI and federated learning under the supervision of Kishor Morol.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Aug 2026</div>
+          <div>
+            <span class="news-tag tag-paper">Preprint</span>
+            Our paper <strong>"TRIAGE: Risk-Controlled Pseudo-Label Admission for Annotation-Efficient Semi-Supervised Retinal OCT Classification"</strong> (First Author) is now on arXiv and under review at <em>Scientific Reports</em>!
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Aug 2026</div>
+          <div>
+            <span class="news-tag tag-paper">Preprint</span>
+            Co-authored paper <strong>"Beyond Accuracy: Quantifying Pulmonary Attribution in Anatomy-Guided Chest X-Ray Classification Under Domain Shift"</strong> submitted to <em>Scientific Reports</em>.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">June 2026</div>
+          <div>
+            <span class="news-tag tag-position">Appointment</span>
+            Joined <strong>Arché Intelligence Lab</strong> as a <em>Research Assistant</em> under Mahamodul Hasan Mahadi, working on 3D volumetric MRI segmentation &amp; LLM-assisted radiology pipelines.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">2026</div>
+          <div>
+            <span class="news-tag tag-award">Kaggle</span>
+            Awarded <strong>Bronze Medal</strong> in the Kaggle <strong>CSIRO – Image2Biomass Prediction Competition</strong> (Ranked <strong>358 / 3,805</strong> — Top 10%).
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">2026</div>
+          <div>
+            <span class="news-tag tag-paper">Conference</span>
+            First-author paper <strong>"An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN"</strong> published at <strong>2nd IEEE QPAIN 2026</strong>.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">2025</div>
+          <div>
+            <span class="news-tag tag-paper">Conference</span>
+            Two papers accepted and published at <strong>28th IEEE ICCIT 2025</strong> covering memory-efficient remote sensing segmentation and transformer-based clinical text mining.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PUBLICATIONS ══ -->
+    <section id="publications" class="content-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Publications</h2>
+        </div>
+        <div class="section-subtext">
+          <a href="https://scholar.google.com/citations?user=dnLo7VQAAAAJ" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-google-scholar"></i> Google Scholar Profile ›
+          </a>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="pub-filter-bar">
+        <button class="filter-btn active" onclick="filterPubs('all', event)">All Work (8)</button>
+        <button class="filter-btn" onclick="filterPubs('journal', event)">Journals &amp; Preprints (3)</button>
+        <button class="filter-btn" onclick="filterPubs('conference', event)">Conference Proceedings (5)</button>
+      </div>
+
+      <div class="pub-list">
+
+        <!-- Paper 1: TRIAGE (First Author Journal Under Review) -->
+        <article class="pub-card featured" data-category="journal">
+          <div class="pub-layout-grid">
+            <div class="pub-teaser-box" onclick="openLightbox('assets/figures/triage_fig2.jpg', 'TRIAGE: Risk-Controlled Pseudo-Label Admission Framework')">
+              <img src="assets/figures/triage_teaser.jpg" alt="TRIAGE Pipeline" class="pub-teaser-img" loading="lazy">
+              <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> Framework</span>
+            </div>
+            <div class="pub-content-box">
+              <div class="pub-header">
+                <span class="pub-venue-badge venue-under-review"><i class="fa-regular fa-clock"></i> Under Review — Scientific Reports</span>
+                <span class="news-tag tag-paper">First Author</span>
+              </div>
+              <h3 class="pub-title">
+                <a href="https://doi.org/10.48550/arXiv.2608.14321" target="_blank" rel="noopener noreferrer">
+                  TRIAGE: Risk-Controlled Pseudo-Label Admission for Annotation-Efficient Semi-Supervised Retinal OCT Classification
+                </a>
+              </h3>
+              <div class="pub-authors">
+                <strong>Md Ashraful Hossen Akash</strong>, Shyla Afroge, Abdullah Al Mamun, Md. Kishor Morol, Tze Hui Liew
+              </div>
+              <div class="pub-venue-text">Under review at Scientific Reports, Nature Publishing Group (2026).</div>
+              <div class="pub-tldr">
+                <strong>TL;DR:</strong> Introduces <em>TRIAGE</em>, a selective pseudo-label admission mechanism incorporating risk-controlled calibration to filter out confirmation bias, enabling high-precision retinal OCT pathology classification with up to 60% fewer labeled scans.
+              </div>
+              <div class="pub-links">
+                <a href="assets/papers/TRIAGE_Retinal_OCT_Classification.pdf" target="_blank" class="pub-link-btn primary-action"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="https://doi.org/10.48550/arXiv.2608.14321" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv:2608.14321</a>
+                <a href="https://github.com/mdahakash/TRIAGE" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-brands fa-github"></i> Code</a>
+                <button class="pub-link-btn" onclick="toggleBibtex('bib-triage')"><i class="fa-solid fa-quote-left"></i> BibTeX</button>
+              </div>
+              <div id="bib-triage" class="bibtex-drawer">
+                <button class="copy-bib-btn" onclick="copyBibtex('bibtext-triage-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre class="bibtex-text" id="bibtext-triage-code">@article{akash2026triage,
+  title={TRIAGE: Risk-Controlled Pseudo-Label Admission for Annotation-Efficient Semi-Supervised Retinal OCT Classification},
+  author={Akash, Md Ashraful Hossen and Afroge, Shyla and Al Mamun, Abdullah and Morol, Md. Kishor and Liew, Tze Hui},
+  journal={arXiv preprint arXiv:2608.14321},
+  year={2026}
+}</pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 2: Beyond Accuracy (Journal Under Review) -->
+        <article class="pub-card" data-category="journal">
+          <div class="pub-layout-grid">
+            <div class="pub-teaser-box" onclick="openLightbox('assets/figures/beyond_accuracy_teaser.jpg', 'Beyond Accuracy: Pulmonary Attribution & Reliability Gap Under Domain Shift')">
+              <img src="assets/figures/beyond_teaser.jpg" alt="Beyond Accuracy Reliability Gap" class="pub-teaser-img" loading="lazy">
+              <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> Reliability Gap</span>
+            </div>
+            <div class="pub-content-box">
+              <div class="pub-header">
+                <span class="pub-venue-badge venue-under-review"><i class="fa-regular fa-clock"></i> Under Review — Scientific Reports</span>
+              </div>
+              <h3 class="pub-title">
+                <a href="https://doi.org/10.48550/arXiv.2608.30467" target="_blank" rel="noopener noreferrer">
+                  Beyond Accuracy: Quantifying Pulmonary Attribution in Anatomy-Guided Chest X-Ray Classification Under Domain Shift
+                </a>
+              </h3>
+              <div class="pub-authors">
+                Abdullah Al Mamun, Md. Nasif Osman Khansur, <strong>Md Ashraful Hossen Akash</strong>, Md. Kishor Morol, Tze Hui Liew
+              </div>
+              <div class="pub-venue-text">Under review at Scientific Reports, Nature Publishing Group (2026).</div>
+              <div class="pub-tldr">
+                <strong>TL;DR:</strong> Explores how medical image classifiers degrade under multi-center domain shifts by evaluating the alignment between saliency heatmaps and true anatomical boundaries using mask-conditioned attribution metrics.
+              </div>
+              <div class="pub-links">
+                <a href="assets/papers/Beyond_Accuracy_Pulmonary_CXR.pdf" target="_blank" class="pub-link-btn primary-action"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="https://doi.org/10.48550/arXiv.2608.30467" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv:2608.30467</a>
+                <a href="https://github.com/mdahakash/BeyondAccuracy" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-brands fa-github"></i> Code</a>
+                <button class="pub-link-btn" onclick="toggleBibtex('bib-beyond')"><i class="fa-solid fa-quote-left"></i> BibTeX</button>
+              </div>
+              <div id="bib-beyond" class="bibtex-drawer">
+                <button class="copy-bib-btn" onclick="copyBibtex('bibtext-beyond-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre class="bibtex-text" id="bibtext-beyond-code">@article{mamun2026beyond,
+  title={Beyond Accuracy: Quantifying Pulmonary Attribution in Anatomy-Guided Chest X-Ray Classification Under Domain Shift},
+  author={Al Mamun, Abdullah and Khansur, Md. Nasif Osman and Akash, Md Ashraful Hossen and Morol, Md. Kishor and Liew, Tze Hui},
+  journal={arXiv preprint arXiv:2608.30467},
+  year={2026}
+}</pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 3: Temporal Generalization (Journal Under Review) -->
+        <article class="pub-card" data-category="journal">
+          <div class="pub-layout-grid">
+            <div class="pub-teaser-box" onclick="openLightbox('assets/figures/temporal_teaser.jpg', 'Temporal Generalization: GNN Explanation Stability and Metric Rank Reversal')">
+              <img src="assets/figures/temporal_teaser.jpg" alt="Temporal Generalization Rank Reversal" class="pub-teaser-img" loading="lazy">
+              <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> Rank Reversal</span>
+            </div>
+            <div class="pub-content-box">
+              <div class="pub-header">
+                <span class="pub-venue-badge venue-under-review"><i class="fa-regular fa-clock"></i> Under Review — JISA</span>
+              </div>
+              <h3 class="pub-title">
+                <a href="https://doi.org/10.48550/arXiv.2609.24280" target="_blank" rel="noopener noreferrer">
+                  Temporal Generalization and Explanation Stability of Control Flow Graph Neural Networks for Malware Detection
+                </a>
+              </h3>
+              <div class="pub-authors">
+                Md. Asif Sajeed, Md. Nazrul Islam Mondal, <strong>Md Ashraful Hossen Akash</strong>
+              </div>
+              <div class="pub-venue-text">Under review at Journal of Information Security and Applications (Elsevier, 2026).</div>
+              <div class="pub-tldr">
+                <strong>TL;DR:</strong> Evaluates temporal decay and explanation fidelity in Graph Neural Networks (GNNs) analyzing evolving malware CFGs over multiple calendar years.
+              </div>
+              <div class="pub-links">
+                <a href="assets/papers/Temporal_generalization.pdf" target="_blank" class="pub-link-btn primary-action"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="https://doi.org/10.48550/arXiv.2609.24280" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv:2609.24280</a>
+                <a href="https://github.com/Ho9pe/TG-CFG" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-brands fa-github"></i> Code</a>
+                <button class="pub-link-btn" onclick="toggleBibtex('bib-temporal')"><i class="fa-solid fa-quote-left"></i> BibTeX</button>
+              </div>
+              <div id="bib-temporal" class="bibtex-drawer">
+                <button class="copy-bib-btn" onclick="copyBibtex('bibtext-temporal-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre class="bibtex-text" id="bibtext-temporal-code">@article{sajeed2026temporal,
+  title={Temporal Generalization and Explanation Stability of Control Flow Graph Neural Networks for Malware Detection},
+  author={Sajeed, Md. Asif and Mondal, Md. Nazrul Islam and Akash, Md Ashraful Hossen},
+  journal={arXiv preprint arXiv:2609.24280},
+  year={2026}
+}</pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 4: QPAIN 2026 (Published First Author) -->
+        <article class="pub-card featured" data-category="conference">
+          <div class="pub-layout-grid">
+            <div class="pub-teaser-box" onclick="openLightbox('assets/figures/qpain_teaser.jpg', 'Multi-Scale CNN Framework for Explainable Alzheimer Diagnosis')">
+              <img src="assets/figures/qpain_teaser.jpg" alt="QPAIN Multi-Scale Architecture" class="pub-teaser-img" loading="lazy">
+              <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> Architecture</span>
+            </div>
+            <div class="pub-content-box">
+              <div class="pub-header">
+                <span class="pub-venue-badge venue-published"><i class="fa-solid fa-circle-check"></i> Published — IEEE QPAIN 2026</span>
+                <span class="news-tag tag-paper">First Author</span>
+              </div>
+              <h3 class="pub-title">
+                <a href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank" rel="noopener noreferrer">
+                  An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN
+                </a>
+              </h3>
+              <div class="pub-authors">
+                <strong>Md Ashraful Hossen Akash</strong>, Shyla Afroge, Md. Asif Sajeed, Md Barkullah, Abul Khayer
+              </div>
+              <div class="pub-venue-text">Proceedings of the 2nd International Conference on Quantum, Power, AI and Information Networks (IEEE QPAIN 2026).</div>
+              <div class="pub-tldr">
+                <strong>TL;DR:</strong> Proposes a custom multi-scale convolutional network coupled with Grad-CAM attribution to diagnose 4 distinct stages of Alzheimer's Disease from MRI scans, boosting diagnostic transparency.
+              </div>
+              <div class="pub-links">
+                <a href="assets/papers/Explainable_Alzheimers_Diagnosis_QPAIN.pdf" target="_blank" class="pub-link-btn primary-action"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-solid fa-link"></i> IEEE DOI</a>
+                <a href="https://github.com/mdahakash/AlzDetect-Ai" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-brands fa-github"></i> Code</a>
+                <a href="https://alzdetectai.streamlit.app" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-solid fa-play"></i> Live App</a>
+                <button class="pub-link-btn" onclick="toggleBibtex('bib-qpain')"><i class="fa-solid fa-quote-left"></i> BibTeX</button>
+              </div>
+              <div id="bib-qpain" class="bibtex-drawer">
+                <button class="copy-bib-btn" onclick="copyBibtex('bibtext-qpain-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre class="bibtex-text" id="bibtext-qpain-code">@inproceedings{akash2026explainable,
+  title={An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN},
+  author={Akash, Md Ashraful Hossen and Afroge, Shyla and Sajeed, Md. Asif and Barkullah, Md and Khayer, Abul},
+  booktitle={2026 2nd International Conference on Quantum, Power, AI and Information Networks (QPAIN)},
+  pages={1--6},
+  year={2026},
+  organization={IEEE},
+  doi={10.1109/QPAIN69676.2026.11545771}
+}</pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 5: ICCIT 2025 Water Body (Published) -->
+        <article class="pub-card" data-category="conference">
+          <div class="pub-layout-grid">
+            <div class="pub-teaser-box" onclick="openLightbox('assets/figures/water_teaser.jpg', 'Memory-Efficient Deep Learning Architectures for Water Body Segmentation')">
+              <img src="assets/figures/water_teaser.jpg" alt="Water Body Segmentation Framework" class="pub-teaser-img" loading="lazy">
+              <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> Segmentation</span>
+            </div>
+            <div class="pub-content-box">
+              <div class="pub-header">
+                <span class="pub-venue-badge venue-published"><i class="fa-solid fa-circle-check"></i> Published — IEEE ICCIT 2025</span>
+              </div>
+              <h3 class="pub-title">
+                <a href="https://doi.org/10.1109/ICCIT68739.2025.11491634" target="_blank" rel="noopener noreferrer">
+                  Memory-Efficient Deep Learning Architectures for Water Body Segmentation in Satellite Imagery: A Comparative Analysis and Ensemble Approach
+                </a>
+              </h3>
+              <div class="pub-authors">
+                Md. Asif Sajeed, Shyla Afroge, <strong>Md Ashraful Hossen Akash</strong>, Abul Khayer, Abdullah Al Mamun
+              </div>
+              <div class="pub-venue-text">Proceedings of the 28th International Conference on Computer and Information Technology (IEEE ICCIT 2025).</div>
+              <div class="pub-tldr">
+                <strong>TL;DR:</strong> Comprehensive benchmark of memory-efficient semantic segmentation networks (LinkNet, FPN, DeepLabV3+) on satellite remote sensing, formulating a light ensemble optimized for embedded hardware.
+              </div>
+              <div class="pub-links">
+                <a href="assets/papers/Water_Body_Segmentation_ICCIT.pdf" target="_blank" class="pub-link-btn primary-action"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="https://doi.org/10.1109/ICCIT68739.2025.11491634" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-solid fa-link"></i> IEEE DOI</a>
+                <a href="https://github.com/mdahakash/WaterbodySegmentation" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-brands fa-github"></i> Code</a>
+                <button class="pub-link-btn" onclick="toggleBibtex('bib-water')"><i class="fa-solid fa-quote-left"></i> BibTeX</button>
+              </div>
+              <div id="bib-water" class="bibtex-drawer">
+                <button class="copy-bib-btn" onclick="copyBibtex('bibtext-water-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre class="bibtex-text" id="bibtext-water-code">@inproceedings{sajeed2025memory,
+  title={Memory-Efficient Deep Learning Architectures for Water Body Segmentation in Satellite Imagery: A Comparative Analysis and Ensemble Approach},
+  author={Sajeed, Md. Asif and Afroge, Shyla and Akash, Md Ashraful Hossen and Khayer, Abul and Al Mamun, Abdullah},
+  booktitle={2025 28th International Conference on Computer and Information Technology (ICCIT)},
+  pages={1--6},
+  year={2025},
+  organization={IEEE},
+  doi={10.1109/ICCIT68739.2025.11491634}
+}</pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 6: ICCIT 2025 Radiology (Published) -->
+        <article class="pub-card" data-category="conference">
+          <div class="pub-layout-grid">
+            <div class="pub-teaser-box" onclick="openLightbox('assets/figures/radiology_teaser.jpg', 'Transformer-Based Multi-Label Clinical Disease Prediction Workflow')">
+              <img src="assets/figures/radiology_teaser.jpg" alt="Radiology Transformer NLP" class="pub-teaser-img" loading="lazy">
+              <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> Transformer</span>
+            </div>
+            <div class="pub-content-box">
+              <div class="pub-header">
+                <span class="pub-venue-badge venue-published"><i class="fa-solid fa-circle-check"></i> Published — IEEE ICCIT 2025</span>
+              </div>
+              <h3 class="pub-title">
+                <a href="https://doi.org/10.1109/ICCIT68739.2025.11491786" target="_blank" rel="noopener noreferrer">
+                  Transformer-Based Multi-Label Disease Prediction from Radiology Reports
+                </a>
+              </h3>
+              <div class="pub-authors">
+                Abul Khayer, Shyla Afroge, Abdullah Al Mamun, Md. Asif Sajeed, <strong>Md Ashraful Hossen Akash</strong>
+              </div>
+              <div class="pub-venue-text">Proceedings of the 28th International Conference on Computer and Information Technology (IEEE ICCIT 2025).</div>
+              <div class="pub-tldr">
+                <strong>TL;DR:</strong> Develops attention-based NLP transformer models for automated multi-label clinical finding extraction from unstructured unstructured radiological text reports.
+              </div>
+              <div class="pub-links">
+                <a href="assets/papers/Transformer_Radiology_Reports_ICCIT.pdf" target="_blank" class="pub-link-btn primary-action"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="https://doi.org/10.1109/ICCIT68739.2025.11491786" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-solid fa-link"></i> IEEE DOI</a>
+                <a href="https://github.com/mdahakash/Radiology-transformer-ai" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-brands fa-github"></i> Code</a>
+                <button class="pub-link-btn" onclick="toggleBibtex('bib-radiology')"><i class="fa-solid fa-quote-left"></i> BibTeX</button>
+              </div>
+              <div id="bib-radiology" class="bibtex-drawer">
+                <button class="copy-bib-btn" onclick="copyBibtex('bibtext-radiology-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre class="bibtex-text" id="bibtext-radiology-code">@inproceedings{khayer2025transformer,
+  title={Transformer-Based Multi-Label Disease Prediction from Radiology Reports},
+  author={Khayer, Abul and Afroge, Shyla and Al Mamun, Abdullah and Sajeed, Md. Asif and Akash, Md Ashraful Hossen},
+  booktitle={2025 28th International Conference on Computer and Information Technology (ICCIT)},
+  pages={1--6},
+  year={2025},
+  organization={IEEE},
+  doi={10.1109/ICCIT68739.2025.11491786}
+}</pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 7: ICRPSET 2026 (Accepted, In Press) -->
+        <article class="pub-card" data-category="conference">
+          <div class="pub-layout-grid">
+            <div class="pub-teaser-box" onclick="openLightbox('assets/figures/melalight_teaser.jpg', 'MeLALight: DCT-Based Frequency-Channel Attention Fusion on RepViT')">
+              <img src="assets/figures/melalight_teaser.jpg" alt="MeLALight Workflow" class="pub-teaser-img" loading="lazy">
+              <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> RepViT DCT</span>
+            </div>
+            <div class="pub-content-box">
+              <div class="pub-header">
+                <span class="pub-venue-badge venue-published"><i class="fa-solid fa-check"></i> Accepted, in Press — 7th ICRPSET 2026 (Nov 2026)</span>
+              </div>
+              <h3 class="pub-title">
+                MeLALight: Melanoma Classification Using Multi-Stage DCT-Based Frequency-Channel Attention Fusion on RepViT
+              </h3>
+              <div class="pub-authors">
+                Md Abdur Rahaman, <strong>Md Ashraful Hossen Akash</strong>, Ayman Tahmid, Farjana Parvin
+              </div>
+              <div class="pub-venue-text">7th International Conference on Recent Perspectives in Science, Engineering and Technology (ICRPSET 2026).</div>
+              <div class="pub-tldr">
+                <strong>TL;DR:</strong> Integrates 2D Discrete Cosine Transform (DCT) frequency attention into re-parameterized Vision Transformer (RepViT) blocks for high-accuracy, low-latency skin lesion diagnosis.
+              </div>
+              <div class="pub-links">
+                <a href="assets/papers/MeLALight_Melanoma_RepViT.pdf" target="_blank" class="pub-link-btn primary-action"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="https://github.com/ARShohan03/melanoma_skin_cancer_classification" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-brands fa-github"></i> Code</a>
+                <button class="pub-link-btn" onclick="toggleBibtex('bib-melalight')"><i class="fa-solid fa-quote-left"></i> BibTeX</button>
+              </div>
+              <div id="bib-melalight" class="bibtex-drawer">
+                <button class="copy-bib-btn" onclick="copyBibtex('bibtext-melalight-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre class="bibtex-text" id="bibtext-melalight-code">@inproceedings{rahaman2026melalight,
+  title={MeLALight: Melanoma Classification Using Multi-Stage DCT-Based Frequency-Channel Attention Fusion on RepViT},
+  author={Rahaman, Md Abdur and Akash, Md Ashraful Hossen and Tahmid, Ayman and Parvin, Farjana},
+  booktitle={7th International Conference on Recent Perspectives in Science, Engineering and Technology (ICRPSET)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 8: ICCIT 2026 Plant Few-Shot (Under Review) -->
+        <article class="pub-card" data-category="conference">
+          <div class="pub-layout-grid">
+            <div class="pub-teaser-box" onclick="openLightbox('assets/figures/plant_teaser.jpg', 'Compact Calibrated Prototypical Networks for Cross-Domain Plant Disease Classification')">
+              <img src="assets/figures/plant_teaser.jpg" alt="Plant Disease Few-Shot Net" class="pub-teaser-img" loading="lazy">
+              <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> Few-Shot Net</span>
+            </div>
+            <div class="pub-content-box">
+              <div class="pub-header">
+                <span class="pub-venue-badge venue-under-review"><i class="fa-regular fa-clock"></i> Under Review — 29th ICCIT 2026</span>
+              </div>
+              <h3 class="pub-title">
+                Compact Calibrated Prototypical Networks for Cross-Domain Few-Shot Plant Disease Classification
+              </h3>
+              <div class="pub-authors">
+                Md. Tanvir Kabir Akon, A. F. M. Minhazur Rahman, <strong>Md Ashraful Hossen Akash</strong>
+              </div>
+              <div class="pub-venue-text">Under review at 29th International Conference on Computer and Information Technology (ICCIT 2026).</div>
+              <div class="pub-tldr">
+                <strong>TL;DR:</strong> Proposes temperature-scaled compact prototypical feature embeddings to mitigate domain shift in few-shot agricultural disease classification.
+              </div>
+              <div class="pub-links">
+                <a href="assets/papers/Few_Shot_Plant_Disease_Classification.pdf" target="_blank" class="pub-link-btn primary-action"><i class="fa-regular fa-file-pdf"></i> PDF</a>
+                <a href="https://github.com/tanvirakon/codes-iccit-compact-calibrated-plant-disease-2026" target="_blank" rel="noopener noreferrer" class="pub-link-btn"><i class="fa-brands fa-github"></i> Code</a>
+                <button class="pub-link-btn" onclick="toggleBibtex('bib-fewshot')"><i class="fa-solid fa-quote-left"></i> BibTeX</button>
+              </div>
+              <div id="bib-fewshot" class="bibtex-drawer">
+                <button class="copy-bib-btn" onclick="copyBibtex('bibtext-fewshot-code')"><i class="fa-regular fa-copy"></i> Copy</button>
+                <pre class="bibtex-text" id="bibtext-fewshot-code">@inproceedings{akon2026compact,
+  title={Compact Calibrated Prototypical Networks for Cross-Domain Few-Shot Plant Disease Classification},
+  author={Akon, Md. Tanvir Kabir and Rahman, A. F. M. Minhazur and Akash, Md Ashraful Hossen},
+  booktitle={29th International Conference on Computer and Information Technology (ICCIT)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ RESEARCH & PROFESSIONAL EXPERIENCE ══ -->
+    <section id="experience" class="content-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Experience</h2>
+        </div>
+      </div>
+
+      <div class="timeline-container">
+
+        <!-- Entry 1: Elite Research Lab -->
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="entry-layout">
+            <div class="entry-logo-box" title="Elite Research Lab LLC">
+              <img src="assets/logos/elite_lab.jpg" alt="Elite Research Lab LLC" class="entry-logo-img" loading="lazy">
+            </div>
+            <div class="entry-content">
+              <div class="entry-header">
+                <div class="entry-role">Research Intern (formerly Student Researcher)</div>
+                <div class="entry-date">Aug 2026 – Present</div>
+              </div>
+              <div class="entry-lab">Elite Research Lab LLC &bull; New York, USA</div>
+              <div class="entry-advisor">Supervised by Kishor Morol</div>
+              <div class="entry-body">
+                <ul>
+                  <li>Joined as <strong>Student Researcher</strong> in August 2026; promoted to <strong>Research Intern</strong> in November 2026.</li>
+                  <li>Investigating multimodal deep architectures and privacy-preserving <strong>Federated Learning</strong> for multi-institutional healthcare AI.</li>
+                  <li>Designing attention-based aggregation strategies to mitigate inter-client data heterogeneity and distribution drift across medical imaging modalities.</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Recent Publications band (centerpiece) -->
-    <div class="band-alt pub-centerpiece">
-      <div class="section-layout">
-        <div class="section-label">
-          <span class="eyebrow">Research output</span>
-          <h2>Publications</h2>
-          <a class="badge scholar-badge" href="https://scholar.google.com/citations?user=dnLo7VQAAAAJ" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-google-scholar" aria-hidden="true"></i> Google Scholar
+        <!-- Entry 2: Arche Intelligence Lab -->
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="entry-layout">
+            <div class="entry-logo-box" title="Arché Intelligence Lab">
+              <img src="assets/logos/arche_lab.png" alt="Arché Intelligence Lab" class="entry-logo-img" loading="lazy">
+            </div>
+            <div class="entry-content">
+              <div class="entry-header">
+                <div class="entry-role">Research Assistant</div>
+                <div class="entry-date">June 2026 – Present</div>
+              </div>
+              <div class="entry-lab">Arché Intelligence Lab</div>
+              <div class="entry-advisor">Supervised by Mahamodul Hasan Mahadi</div>
+              <div class="entry-body">
+                <ul>
+                  <li>Developed deep learning and LLM pipelines for neuro-oncological imaging, with a focus on MRI-based brain tumor classification, semantic boundary delineation (BraTS benchmark), and automated grading.</li>
+                  <li>Built 3D volumetric transformer segmentation pipelines using <strong>PyTorch</strong> and <strong>MONAI</strong>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 3: RUET Student Researcher -->
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="entry-layout">
+            <div class="entry-logo-box" title="Rajshahi University of Engineering &amp; Technology (RUET)">
+              <img src="assets/logos/ruet.jpg" alt="RUET Logo" class="entry-logo-img" loading="lazy">
+            </div>
+            <div class="entry-content">
+              <div class="entry-header">
+                <div class="entry-role">Student Researcher</div>
+                <div class="entry-date">May 2024 – Aug 2026</div>
+              </div>
+              <div class="entry-lab">Rajshahi University of Engineering &amp; Technology (RUET)</div>
+              <div class="entry-advisor">Supervised by Assoc. Prof. Shyla Afroge</div>
+              <div class="entry-body">
+                <ul>
+                  <li>Researched deep learning methods across medical imaging (OCT, MRI, CXR), satellite remote sensing, and clinical NLP.</li>
+                  <li>Authored and co-authored 3 published IEEE conference papers and 2 journal manuscripts under review at <em>Scientific Reports</em>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 4: Industry Experience -->
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="entry-layout">
+            <div class="entry-logo-box" title="Code Studio Software Company">
+              <img src="assets/logos/code_studio.png" alt="Code Studio AI Research Lab" class="entry-logo-img" loading="lazy">
+            </div>
+            <div class="entry-content">
+              <div class="entry-header">
+                <div class="entry-role">Software Engineer Intern</div>
+                <div class="entry-date">Feb 2025 – May 2025</div>
+              </div>
+              <div class="entry-lab">Code Studio Software Company &bull; Rajshahi, Bangladesh</div>
+              <div class="entry-body">
+                <ul>
+                  <li>Applied SDLC workflows, relational DB schema design, and microservice architectures. Built full-stack applications with Node.js, Django, React, RESTful APIs, rate-limiting, and SQL optimization.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 5: Research Mentorship & Leadership -->
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="entry-layout">
+            <div class="entry-logo-box" title="RUET Computing Society (RCS)">
+              <img src="assets/logos/ruet_cs.png" alt="RUET Computing Society" class="entry-logo-img" loading="lazy">
+            </div>
+            <div class="entry-content">
+              <div class="entry-header">
+                <div class="entry-role">Research Mentor &amp; HR Lead</div>
+                <div class="entry-date">2024 – 2026</div>
+              </div>
+              <div class="entry-lab">RUET Computing Society (RCS)</div>
+              <div class="entry-body">
+                <ul>
+                  <li>Mentored 2 junior undergraduate students through complete conference paper preparation and successful manuscript submissions.</li>
+                  <li>Directed student organization activities, inter-university programming contests, and technical workshops.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ RESEARCH PROJECTS ══ -->
+    <section id="projects" class="content-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Projects</h2>
+        </div>
+      </div>
+
+      <div class="project-grid">
+
+        <!-- Project 1: 3D SwinUNETR BraTS -->
+        <div class="project-card">
+          <div class="project-teaser-box" onclick="openLightbox('assets/figures/brats_segmentation_teaser.jpg', '3D SwinUNETR: Volumetric Multi-Parametric MRI Brain Tumor Segmentation (BraTS 2020)')">
+            <img src="assets/figures/brats_segmentation_teaser.jpg" alt="3D SwinUNETR BraTS Segmentation" class="project-teaser-img" loading="lazy">
+            <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> BraTS Segmentation</span>
+          </div>
+          <div class="project-icon-bar">
+            <div class="project-icon"><i class="fa-solid fa-brain"></i></div>
+            <span class="tech-pill">MONAI &bull; PyTorch</span>
+          </div>
+          <h3>3D Multimodal Brain Tumor Segmentation</h3>
+          <p>
+            Developed a volumetric multi-parametric MRI segmentation pipeline using <strong>3D SwinUNETR</strong> on the BraTS 2020 benchmark. Achieved <strong>92.61% Whole Tumor (WT)</strong>, <strong>86.06% Enhancing Tumor (ET)</strong>, and <strong>85.49%</strong> composite Dice similarity.
+          </p>
+          <div class="project-tags">
+            <span class="tech-pill">3D SwinUNETR</span>
+            <span class="tech-pill">MONAI</span>
+            <span class="tech-pill">BraTS Benchmark</span>
+            <span class="tech-pill">Multi-sequence MRI</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://github.com/mdahakash/3D_Brain_Tumor_Segmentation" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Repository</a>
+            <a href="https://sulci.archelab.org/#tumor" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-circle-play"></i> Live Pipeline</a>
+          </div>
+        </div>
+
+        <!-- Project 2: Lightweight Brain Tumor CNN -->
+        <div class="project-card">
+          <div class="project-teaser-box" onclick="openLightbox('assets/figures/braintumor_classifier_teaser.jpg', 'Parameter-Efficient Residual CNN: Multi-Class Brain Tumor MRI Classification (ND5 Benchmark)')">
+            <img src="assets/figures/braintumor_classifier_teaser.jpg" alt="Brain Tumor MRI Pathology Classes" class="project-teaser-img" loading="lazy">
+            <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> Multi-Class MRI</span>
+          </div>
+          <div class="project-icon-bar">
+            <div class="project-icon"><i class="fa-solid fa-microchip"></i></div>
+            <span class="tech-pill">Efficient DL</span>
+          </div>
+          <h3>Parameter-Efficient Brain Tumor MRI Classifier</h3>
+          <p>
+            Designed a lightweight multi-scale residual CNN (0.818M parameters) with dual global invariant pooling and class-weighted focal loss, achieving <strong>99.61% accuracy</strong> and <strong>99.58% macro F1</strong> across 1,779 test slices on the ND5 benchmark.
+          </p>
+          <div class="project-tags">
+            <span class="tech-pill">0.8M Params</span>
+            <span class="tech-pill">PyTorch</span>
+            <span class="tech-pill">Dual Pooling</span>
+            <span class="tech-pill">Clinical Edge AI</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://github.com/mdahakash/Brain_Tumor_Classification_Lightweighted" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <!-- Project 3: AlzDetect-Ai -->
+        <div class="project-card">
+          <div class="project-teaser-box" onclick="openLightbox('assets/figures/alzdetect_teaser.jpg', 'AlzDetect-Ai: Multi-Scale CNN Architecture & Interactive Grad-CAM Visualization')">
+            <img src="assets/figures/alzdetect_teaser.jpg" alt="AlzDetect-Ai Teaser" class="project-teaser-img" loading="lazy">
+            <span class="pub-teaser-label"><i class="fa-solid fa-magnifying-glass-plus"></i> Architecture &amp; Grad-CAM</span>
+          </div>
+          <div class="project-icon-bar">
+            <div class="project-icon"><i class="fa-solid fa-notes-medical"></i></div>
+            <span class="tech-pill">Explainable AI</span>
+          </div>
+          <h3>AlzDetect-Ai: Explainable Diagnostic System</h3>
+          <p>
+            Full-stack explainable clinical decision-support application for multi-stage Alzheimer's disease diagnosis. Combines a custom multi-scale CNN with transfer learning (ResNet50 &amp; Xception) and interactive Grad-CAM heatmap visualization.
+          </p>
+          <div class="project-tags">
+            <span class="tech-pill">Grad-CAM</span>
+            <span class="tech-pill">Streamlit Cloud</span>
+            <span class="tech-pill">Ensemble Learning</span>
+            <span class="tech-pill">MRI Neuroimaging</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://github.com/mdahakash/AlzDetect-Ai" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Repository</a>
+            <a href="https://alzdetectai.streamlit.app" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-desktop"></i> Live Web App</a>
+          </div>
+        </div>
+
+        <!-- Project 4: Open Dataset Kaggle -->
+        <div class="project-card">
+          <div class="project-icon-bar">
+            <div class="project-icon"><i class="fa-solid fa-database"></i></div>
+            <span class="tech-pill">Open Science</span>
+          </div>
+          <h3>Open Alzheimer's MRI Dataset &amp; Benchmarks</h3>
+          <p>
+            Curated, cleaned, and published an open-access Alzheimer's disease neuroimaging dataset on Kaggle. Structured with multi-view slice normalization to assist research reproducibility across global machine learning groups.
+          </p>
+          <div class="project-tags">
+            <span class="tech-pill">Kaggle Datasets</span>
+            <span class="tech-pill">Data Curation</span>
+            <span class="tech-pill">Reproducible ML</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://www.kaggle.com/ashrafulhossenakash" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-kaggle"></i> Kaggle Dataset</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ HONORS, COMPETITIONS & AWARDS ══ -->
+    <section id="awards" class="content-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Honors &amp; Awards</h2>
+        </div>
+      </div>
+
+      <div class="awards-grid">
+
+        <div class="award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-trophy"></i></div>
+          <div class="award-body">
+            <h4>Kaggle Bronze Medal — CSIRO Image2Biomass</h4>
+            <p>Ranked <strong>358 / 3,805</strong> (<strong>Top 10%</strong>) competing against international ML engineers to forecast biomass metrics from imagery.</p>
+          </div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="award-body">
+            <h4>Kaggle Top 3% — Student Performance Prediction</h4>
+            <p>Achieved Rank <strong>96 / 4,317</strong> (<strong>Top 3%</strong> globally) through feature engineering and calibrated gradient boosting ensembles.</p>
+          </div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-award"></i></div>
+          <div class="award-body">
+            <h4>Government Technical Scholarship</h4>
+            <p>Awarded by the Ministry of Education, Government of Bangladesh, in recognition of outstanding academic performance at RUET.</p>
+          </div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="award-body">
+            <h4>Government Talentpool Scholarship</h4>
+            <p>Prestigious regional academic merit award bestowed for top rank in state secondary board examinations.</p>
+          </div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-certificate"></i></div>
+          <div class="award-body">
+            <h4>Mathematics for Machine Learning — Duke University</h4>
+            <p>Rigorous foundation covering multivariate calculus, linear algebra, vector projections, and optimization on Coursera.</p>
+          </div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-certificate"></i></div>
+          <div class="award-body">
+            <h4>Oracle Certified Generative AI Professional</h4>
+            <p>Enterprise certification covering LLM fine-tuning, prompt engineering, attention mechanisms, and retrieval-augmented generation.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section id="contact" class="content-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Contact</h2>
+        </div>
+      </div>
+
+      <!-- Contact Banner -->
+      <div class="contact-banner">
+        <h3>Interested in Potential Collaboration or PhD Opportunities?</h3>
+        <p>
+          I am always eager to discuss research ideas, prospective doctoral advisor alignment, or collaborative scientific inquiries in medical AI and computer vision. Feel free to reach out directly via email.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="mailto:ashraful.hossen.akash@gmail.com" class="email-btn">
+            <i class="fa-solid fa-envelope"></i> ashraful.hossen.akash@gmail.com
           </a>
-          <a class="see-all-btn" href="#publications">SEE ALL PUBLICATIONS ›</a>
         </div>
-        <div>
-          <div class="pub-item">
-            <div class="pub-meta"><i class="fa-regular fa-file" aria-hidden="true"></i> Md Ashraful Hossen Akash et al. (2026).</div>
-            <a class="pub-title-link" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank" rel="noopener noreferrer">An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN.</a>
-            <div class="pub-venue"><em>Published — 2nd QPAIN, 2026.</em></div>
-            <div class="pub-badges">
-              <a class="badge" href="https://www.researchgate.net/publication/401342979" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-              <a class="badge" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank" rel="noopener noreferrer">DOI</a>
-            </div>
-          </div>
-
-          <div class="pub-item">
-            <div class="pub-meta"><i class="fa-regular fa-file" aria-hidden="true"></i> Md Ashraful Hossen Akash et al. (2025).</div>
-            <a class="pub-title-link" href="http://doi.org/10.1109/ICCIT68739.2025.11491634" target="_blank" rel="noopener noreferrer">Memory-Efficient Deep Learning Architectures for Water Body Segmentation in Satellite Imagery.</a>
-            <div class="pub-venue accepted"><em>Published — 28th ICCIT, 2025.</em></div>
-            <div class="pub-badges">
-              <a class="badge" href="https://www.researchgate.net/publication/398727512" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-              <a class="badge" href="http://doi.org/10.1109/ICCIT68739.2025.11491634" target="_blank" rel="noopener noreferrer">DOI</a>
-            </div>
-          </div>
-
-          <div class="pub-item">
-            <div class="pub-meta"><i class="fa-regular fa-file" aria-hidden="true"></i> Md Ashraful Hossen Akash et al. (2025).</div>
-            <a class="pub-title-link" href="https://doi.org/10.1109/ICCIT68739.2025.11491786" target="_blank" rel="noopener noreferrer">Transformer-Based Multi-Label Disease Prediction from Radiology Reports.</a>
-            <div class="pub-venue accepted"><em>Published — 28th ICCIT, 2025.</em></div>
-            <div class="pub-badges">
-              <a class="badge" href="https://www.researchgate.net/publication/398727567" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-              <a class="badge" href="https://doi.org/10.1109/ICCIT68739.2025.11491786" target="_blank" rel="noopener noreferrer">DOI</a>
-            </div>
-          </div>
-        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">
+          <i class="fa-solid fa-location-dot" style="margin-right: 6px; color: var(--primary);"></i> Rajshahi, Bangladesh
+        </p>
       </div>
-    </div>
+    </section>
 
-    <!-- Experience band -->
-    <div class="band">
-      <div class="section-layout">
-        <div class="section-label">
-          <span class="eyebrow">Career so far</span>
-          <h2>Experience</h2>
-          <a class="see-all-btn" href="#experience">ALL EXPERIENCE ›</a>
-        </div>
-        <div>
-          <div style="font-weight:700;margin-bottom:10px;font-size:14px;">Selected Roles</div>
-          <ul style="list-style:disc;padding-left:20px;font-size:14px;color:var(--text);">
-            <li style="margin-bottom:8px;"><strong>Software Development Intern</strong> — Real-world software development experience</li>
-            <li style="margin-bottom:8px;"><strong>Research Assistant (AI &amp; NLP)</strong> — Under supervision of Assoc. Prof. Shyla Afroge, RUET; IEEE publications</li>
-            <li style="margin-bottom:8px;"><strong>HR Lead</strong> — RUET Computer Society</li>
-            <li style="margin-bottom:8px;"><strong>Research Mentor</strong> — Guided 2 junior students through conference paper submissions</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  </main>
 
-    <!-- Awards band -->
-    <div class="band-alt">
-      <div class="section-layout">
-        <div class="section-label">
-          <span class="eyebrow">Recognition</span>
-          <h2>Awards &amp; Certificates</h2>
-          <a class="see-all-btn" href="#awards">ALL AWARDS ›</a>
-        </div>
-        <div>
-          <ul style="list-style:none;font-size:14px;">
-            <li style="margin-bottom:10px;display:flex;gap:10px;"><i class="fa-solid fa-award" style="color:var(--accent);margin-top:3px;flex-shrink:0;" aria-hidden="true"></i><span><strong>EDGE Training Program</strong> — 8-month professional program, Bangladesh Government</span></li>
-            <li style="margin-bottom:10px;display:flex;gap:10px;"><i class="fa-solid fa-certificate" style="color:var(--accent);margin-top:3px;flex-shrink:0;" aria-hidden="true"></i><span><strong>Oracle Generative AI Certification</strong> — GenAI concepts &amp; prompt engineering</span></li>
-            <li style="margin-bottom:10px;display:flex;gap:10px;"><i class="fa-solid fa-certificate" style="color:var(--accent);margin-top:3px;flex-shrink:0;" aria-hidden="true"></i><span><strong>Mathematics for ML</strong> — Duke University via Coursera</span></li>
-            <li style="margin-bottom:10px;display:flex;gap:10px;"><i class="fa-solid fa-certificate" style="color:var(--accent);margin-top:3px;flex-shrink:0;" aria-hidden="true"></i><span><strong>Machine Learning with Python</strong> — Coursera certification</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact band -->
-    <div class="band">
-      <div class="section-layout">
-        <div class="section-label"><h2>Contact</h2></div>
-        <div>
-          <div class="contact-item">
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-            <a href="mailto:ashraful.hossen.akash@email.com">ashraful.hossen.akash@email.com</a>
-          </div>
-          <div class="contact-item">
-            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>Rajshahi, Bangladesh</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /home -->
-
-  <!-- ══ PUBLICATIONS ══ -->
-  <div id="publications" data-section="publications" class="section">
-    <div class="band">
-      <div class="section-layout">
-        <div class="section-label">
-          <span class="eyebrow">Peer-reviewed work</span>
-          <h2>Publications</h2>
-        </div>
-        <div>
-
-          <div class="pub-item">
-            <div class="pub-meta"><i class="fa-regular fa-file" aria-hidden="true"></i> Md Ashraful Hossen Akash et al. (2026).</div>
-            <a class="pub-title-link" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank" rel="noopener noreferrer">
-              An Explainable Deep Learning Framework for Multi-Class Alzheimer's Diagnosis with Multi-Scale CNN.
-            </a>
-            <div class="pub-venue"><em>Published — 2nd International Conference on QPAIN, 2026.</em></div>
-            <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:8px;">
-              An explainable DL framework for multi-class Alzheimer's disease diagnosis from structural MRI, combining a custom multi-scale CNN with transfer learning and ensemble techniques to improve classification robustness.
-            </p>
-            <div class="pub-badges">
-              <a class="badge" href="https://www.researchgate.net/publication/401342979" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-              <a class="badge" href="https://doi.org/10.1109/QPAIN69676.2026.11545771" target="_blank" rel="noopener noreferrer">DOI</a>
-            </div>
-          </div>
-
-          <div class="pub-item">
-            <div class="pub-meta"><i class="fa-regular fa-file" aria-hidden="true"></i> Md Ashraful Hossen Akash et al. (2025).</div>
-            <a class="pub-title-link" href="https://doi.org/10.1109/ICCIT68739.2025.11491634" target="_blank" rel="noopener noreferrer">
-              Memory-Efficient Deep Learning Architectures for Water Body Segmentation in Satellite Imagery: A Comparative Analysis and Ensemble Approach.
-            </a>
-            <div class="pub-venue accepted"><em>Published — 28th International Conference on Computer and Information Technology (ICCIT), 2025.</em></div>
-            <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:8px;">
-              A comparative study of memory-efficient deep learning architectures for satellite-based water body segmentation, with an ensemble approach balancing accuracy and computational efficiency for resource-constrained environments.
-            </p>
-            <div class="pub-badges">
-              <a class="badge" href="https://www.researchgate.net/publication/398727512" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-              <a class="badge" href="http://doi.org/10.1109/ICCIT68739.2025.11491634" target="_blank" rel="noopener noreferrer">DOI</a>
-            </div>
-          </div>
-
-          <div class="pub-item">
-            <div class="pub-meta"><i class="fa-regular fa-file" aria-hidden="true"></i> Md Ashraful Hossen Akash et al. (2025).</div>
-            <a class="pub-title-link" href="https://doi.org/10.1109/ICCIT68739.2025.11491786" target="_blank" rel="noopener noreferrer">
-              Transformer-Based Multi-Label Disease Prediction from Radiology Reports.
-            </a>
-            <div class="pub-venue accepted"><em>Published — 28th International Conference on Computer and Information Technology (ICCIT), 2025.</em></div>
-            <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:8px;">
-              Explores transformer-based NLP models for multi-label disease prediction from unstructured radiology reports, demonstrating the effectiveness of attention-based architectures in extracting clinical insights from medical text.
-            </p>
-            <div class="pub-badges">
-              <a class="badge" href="https://www.researchgate.net/publication/398727567" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-              <a class="badge" href="https://doi.org/10.1109/ICCIT68739.2025.11491786" target="_blank" rel="noopener noreferrer">DOI</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
+  <!-- ══════════════════════ LIGHTBOX MODAL ══════════════════════ -->
+  <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+    <img id="lightboxImg" class="lightbox-content" src="" alt="Full Diagram Preview" onclick="event.stopPropagation()">
+    <div id="lightboxCap" class="lightbox-caption"></div>
   </div>
 
-  <!-- ══ PROJECTS (card grid) ══ -->
-  <div id="projects" data-section="projects" class="section">
-    <div class="band">
-      <div class="section-layout">
-        <div class="section-label">
-          <span class="eyebrow">Built &amp; shipped</span>
-          <h2>Projects</h2>
-        </div>
-        <div class="project-grid">
+  <!-- ══════════════════════ FOOTER ══════════════════════ -->
+  <footer>
+    <p>&copy; 2026 Md Ashraful Hossen Akash</p>
+  </footer>
 
-          <div class="project-card">
-            <div class="card-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
-            <h3>AlzDetect-AI</h3>
-            <p>AI-powered early detection and classification of Alzheimer's disease from brain MRI scans using deep learning techniques.</p>
-            <div>
-              <span class="tech-tag">Python</span><span class="tech-tag">PyTorch</span><span class="tech-tag">CNN</span><span class="tech-tag">Medical Imaging</span>
-            </div>
-            <p class="card-link"><a href="https://github.com/mdahakash/AlzDetect-Ai" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repository</a></p>
-          </div>
+  <!-- ══════════════════════ SCRIPT ══════════════════════ -->
+  <script>
+    /* ── Dark / Light Theme Toggle with localStorage ── */
+    (function initTheme() {
+      const toggleBtn = document.getElementById('themeToggleBtn');
+      const themeIcon = document.getElementById('themeIcon');
+      const savedTheme = localStorage.getItem('akash_academic_theme') || 'light';
 
-          <div class="project-card">
-            <div class="card-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
-            <h3>Restaurant Management Website</h3>
-            <p>A responsive web application for browsing menus, placing orders, and managing reservations through a clean user interface.</p>
-            <div>
-              <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Backend Framework</span>
-            </div>
-            <p class="card-link"><a href="https://github.com/mdahakash/restaurant_site" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repository</a></p>
-          </div>
+      function setTheme(theme) {
+        document.body.setAttribute('data-theme', theme);
+        localStorage.setItem('akash_academic_theme', theme);
+        const isDark = theme === 'dark';
+        themeIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        toggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
 
-          <div class="project-card">
-            <div class="card-icon"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i></div>
-            <h3>Meal Manager Android App</h3>
-            <p>An Android application for planning daily meals, tracking nutrition, and managing food expenses efficiently.</p>
-            <div>
-              <span class="tech-tag">Java</span><span class="tech-tag">Android Studio</span><span class="tech-tag">SQLite</span>
-            </div>
-            <p class="card-link"><a href="https://github.com/mdahakash" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repository</a></p>
-          </div>
+      setTheme(savedTheme);
 
-        </div>
-      </div>
-    </div>
-  </div>
+      toggleBtn.addEventListener('click', () => {
+        const current = document.body.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    })();
 
-  <!-- ══ EXPERIENCE (timeline) ══ -->
-  <div id="experience" data-section="experience" class="section">
-    <div class="band">
-      <div class="section-layout">
-        <div class="section-label">
-          <span class="eyebrow">Career so far</span>
-          <h2>Experience</h2>
-        </div>
-        <div class="timeline">
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <span class="role-tag">Industry</span>
-            <h3>Software Development Intern</h3>
-            <p>Completed a 3-month internship at a software company, gaining hands-on experience in real-world software development and industry workflows.</p>
-            <a href="https://drive.google.com/file/d/179SyK7nIsW4y1e-aC_VIHnlGupl81HfH/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" style="font-size:13px;">Certificate ›</a>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <span class="role-tag">Research</span>
-            <h3>Research Assistant (AI &amp; NLP)</h3>
-            <p>Conducted research in AI and NLP under <a href="https://www.ruet.ac.bd/shylaruet" target="_blank" rel="noopener noreferrer">Assoc. Prof. Shyla Afroge</a>, RUET. Contributed to multiple IEEE conference publications.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <span class="role-tag">Skills</span>
-            <h3>Competitive Programming</h3>
-            <p>Actively participated in Codeforces contests, strengthening algorithmic thinking and problem-solving skills.</p>
-            <a href="https://codeforces.com/profile/ash_ra_ful" target="_blank" rel="noopener noreferrer" style="font-size:13px;">Codeforces Profile ›</a>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <span class="role-tag">Open research</span>
-            <h3>Dataset Developer (Kaggle)</h3>
-            <p>Created and published an Alzheimer's disease–related dataset on Kaggle, contributing to open research and reproducible AI.</p>
-            <a href="https://www.kaggle.com/ashrafulhossenakash" target="_blank" rel="noopener noreferrer" style="font-size:13px;">Kaggle Profile ›</a>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <span class="role-tag">Mentorship</span>
-            <h3>Research Mentor</h3>
-            <p>Mentored 2 students in preparing and submitting conference research papers, providing guidance on methodology, writing, and submission.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <span class="role-tag">Teaching</span>
-            <h3>Tutor</h3>
-            <p>Provided tutoring in <strong>Mathematics, ICT (Numerical Methods, C Programming, HTML), and Physics</strong>. Tutored 3 students (2022) and 1 student (2024–2025).</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <span class="role-tag">Teaching</span>
-            <h3>Q&amp;A Instructor — Udvash</h3>
-            <p>Served as a Q&amp;A teacher for one year, supporting students in academic preparation and problem-solving.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <span class="role-tag">Leadership</span>
-            <h3>HR Lead — RUET Computer Society</h3>
-            <p>Responsible for organizational coordination, member management, and leadership activities.</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ AWARDS ══ -->
-  <div id="awards" data-section="awards" class="section">
-    <div class="band">
-      <div class="section-layout">
-        <div class="section-label">
-          <span class="eyebrow">Recognition</span>
-          <h2>Awards &amp; Certificates</h2>
-        </div>
-        <div class="award-list">
-
-          <div class="award-item">
-            <div class="award-icon-wrap"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
-            <div class="award-body">
-              <h3>EDGE Training Program</h3>
-              <p>Successfully completed an <strong>8-month professional training program</strong> organized by the <strong>Bangladesh Government</strong>.</p>
-              <a href="https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6655-00010" target="_blank" rel="noopener noreferrer" style="font-size:13px;">Certificate ›</a>
-            </div>
-          </div>
-
-          <div class="award-item">
-            <div class="award-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
-            <div class="award-body">
-              <h3>Oracle Generative AI Certification</h3>
-              <p>Earned certification covering foundational GenAI concepts, prompt engineering, and enterprise AI use cases.</p>
-              <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=F3F16DC4AC6958CB01227F11646EE12E79265FA077BF4BD497C9FCA10D6AAA59" target="_blank" rel="noopener noreferrer" style="font-size:13px;">Certificate ›</a>
-            </div>
-          </div>
-
-          <div class="award-item">
-            <div class="award-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
-            <div class="award-body">
-              <h3>Mathematics for Machine Learning — Duke University</h3>
-              <p>Comprehensive Coursera course covering linear algebra, calculus, probability, and optimization for ML.</p>
-              <a href="https://www.coursera.org/account/accomplishments/records/VLNECGAFXQYR" target="_blank" rel="noopener noreferrer" style="font-size:13px;">Certificate ›</a>
-            </div>
-          </div>
-
-          <div class="award-item">
-            <div class="award-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
-            <div class="award-body">
-              <h3>Machine Learning with Python</h3>
-              <p>Applied ML course covering supervised and unsupervised learning, model evaluation, and practical implementation.</p>
-              <a href="https://www.coursera.org/account/accomplishments/records/NA8TNG89JM8L" target="_blank" rel="noopener noreferrer" style="font-size:13px;">Certificate ›</a>
-            </div>
-          </div>
-
-          <div class="award-item">
-            <div class="award-icon-wrap"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
-            <div class="award-body">
-              <h3>Volunteer Certificate</h3>
-              <p>Awarded for volunteering at a university-level academic conference.</p>
-              <!-- FIX: Replaced javascript:void(0) and target="_blank" with standard # to satisfy strict linters -->
-              <a href="#" style="font-size:13px;">Certificate ›</a>
-            </div>
-          </div>
-
-          <div class="award-item">
-            <div class="award-icon-wrap"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></div>
-            <div class="award-body">
-              <h3>Seminar Participation</h3>
-              <p>Attended multiple technical seminars on emerging technologies and current research trends.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-</main><!-- /page-wrap -->
-
-<footer>
-  <p>© 2026 Md Ashraful Hossen Akash &nbsp;·&nbsp; Rajshahi University of Engineering &amp; Technology, Bangladesh</p>
-</footer>
-
-<script>
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  const SECTIONS = ['home', 'publications', 'projects', 'experience', 'awards'];
-
-  function showSection(id, pushState) {
-    if (!SECTIONS.includes(id)) id = 'home';
-
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelector('.section[data-section="' + id + '"]').classList.add('active');
-
-    document.querySelectorAll('.nav-btn[data-target]').forEach(b => {
-      const isActive = b.dataset.target === id;
-      b.classList.toggle('active', isActive);
-      if (isActive) { b.setAttribute('aria-current', 'page'); } else { b.removeAttribute('aria-current'); }
+    /* ── Mobile Navigation Toggle ── */
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('show');
+    });
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && e.target !== mobileBtn) {
+        navMenu.classList.remove('show');
+      }
     });
 
-    if (pushState) {
-      history.pushState({ section: id }, '', '#' + id);
+    /* ── Active Nav on Scroll ── */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollY = window.pageYOffset;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }, { passive: true });
+
+    /* ── Publication Category Filtering ── */
+    function filterPubs(cat, ev) {
+      const cards = document.querySelectorAll('.pub-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (ev && ev.currentTarget) {
+        ev.currentTarget.classList.add('active');
+      } else if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
+      }
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     }
 
-    document.getElementById('mobileMenu').classList.remove('show');
-    document.getElementById('menuToggleBtn').setAttribute('aria-expanded', 'false');
-
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  }
-
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const btn = document.getElementById('menuToggleBtn');
-    const isShown = menu.classList.toggle('show');
-    btn.setAttribute('aria-expanded', String(isShown));
-  }
-
-  document.getElementById('menuToggleBtn').addEventListener('click', function(e) {
-    e.stopPropagation();
-    toggleMenu();
-  });
-
-  document.addEventListener('click', function(e) {
-    const menu = document.getElementById('mobileMenu');
-    const btn = document.getElementById('menuToggleBtn');
-    if (menu.classList.contains('show') && !menu.contains(e.target) && e.target !== btn) {
-      menu.classList.remove('show');
-      btn.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  function navigateTo(id) {
-    showSection(id, true);
-  }
-
-  document.addEventListener('click', function(e) {
-    const link = e.target.closest('a[href^="#"]');
-    if (!link) return;
-    const id = link.getAttribute('href').slice(1);
-    if (SECTIONS.includes(id)) {
-      e.preventDefault();
-      showSection(id, true);
-    }
-  });
-
-  window.addEventListener('popstate', function(e) {
-    const id = (e.state && e.state.section) || location.hash.slice(1) || 'home';
-    showSection(id, false);
-  });
-
-  /* ── THEME TOGGLE ── */
-  (function() {
-    const btn = document.getElementById('themeToggleBtn');
-    const icon = document.getElementById('themeIcon');
-    let theme = 'light'; // explicit default
-
-    function applyTheme(t) {
-      theme = t;
-      document.body.setAttribute('data-theme', t);
-      const isDark = t === 'dark';
-      btn.setAttribute('aria-pressed', String(isDark));
-      btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    /* ── BibTeX Expand & Copy Functions ── */
+    function toggleBibtex(id) {
+      const drawer = document.getElementById(id);
+      if (drawer) {
+        drawer.classList.toggle('open');
+      }
     }
 
-    btn.addEventListener('click', function() {
-      applyTheme(theme === 'dark' ? 'light' : 'dark');
+    function copyBibtex(textId) {
+      const textElem = document.getElementById(textId);
+      if (!textElem) return;
+      const text = textElem.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target.closest('button');
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        setTimeout(() => { btn.innerHTML = orig; }, 2000);
+      }).catch(err => {
+        console.error('Copy failed: ', err);
+      });
+    }
+    /* ── Lightbox Modal Functions ── */
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCap');
+      img.src = src;
+      cap.innerText = caption || '';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightboxModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
     });
-
-    applyTheme('light');
-  })();
- 
-  (function() {
-    const id = SECTIONS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
-    history.replaceState({ section: id }, '', location.pathname + location.search);
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelector('.section[data-section="' + id + '"]').classList.add('active');
-    document.querySelectorAll('.nav-btn[data-target]').forEach(b => {
-      const isActive = b.dataset.target === id;
-      b.classList.toggle('active', isActive);
-      if (isActive) { b.setAttribute('aria-current', 'page'); }
-    });
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  })();
-
-  window.addEventListener('load', function() {
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  });
-</script>
-
+  </script>
 </body>
 </html>
